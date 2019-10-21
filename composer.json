@@ -1,0 +1,62 @@
+{
+  "name": "thanks-to-it/easy-referral-for-woocommerce",
+  "type": "wordpress-plugin",
+  "description": "Referral System for WooCommerce",
+  "keywords": [
+    "wordpress",
+    "woocommerce",
+    "referral",
+    "affiliates"
+  ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/thanks-to-it/wp-design-patterns"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/thanks-to-it/extended-wp"
+    }
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pablo Pacheco",
+      "email": "pablo.sg.pacheco@gmail.com"
+    }
+  ],
+  "config": {
+    "preferred-install": "dist",
+    "optimize-autoloader": true
+  },
+  "require": {
+    "php": ">=5.6.0",
+    "composer/installers": ">=v1.2.0",
+    "thanks-to-it/extended-wp":"dev-master",
+    "thanks-to-it/wp-design-patterns": "dev-master",
+    "hashids/hashids": "3.0.0",
+    "cmb2/cmb2": "v2.6.0",
+    "origgami/cmb2-grid":"dev-master"
+  },
+  "replace": {
+
+  },
+  "extra": {
+    "installer-paths": {
+      "vendor/{$vendor}/{$name}": [
+        "type:wordpress-plugin",
+        "type:wordpress-muplugin"
+      ]
+    }
+  },
+  "autoload": {
+    "classmap": [
+      "src/classes/"
+    ],
+    "exclude-from-classmap": [
+      "/Tests/",
+      "/test/",
+      "/tests/"
+    ]
+  }
+}

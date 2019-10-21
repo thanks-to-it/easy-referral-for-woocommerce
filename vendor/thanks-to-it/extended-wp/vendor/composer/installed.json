@@ -1,0 +1,47 @@
+[
+    {
+        "name": "thanks-to-it/wp-design-patterns",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thanks-to-it/wp-design-patterns.git",
+            "reference": "ff3dbc5e1aeb74d446cf200d8fd17d6c7ae05096"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thanks-to-it/wp-design-patterns/zipball/ff3dbc5e1aeb74d446cf200d8fd17d6c7ae05096",
+            "reference": "ff3dbc5e1aeb74d446cf200d8fd17d6c7ae05096",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6.0"
+        },
+        "time": "2019-09-06T23:42:16+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/classes/"
+            ],
+            "exclude-from-classmap": [
+                "/Tests/",
+                "/test/",
+                "/tests/"
+            ]
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Pablo Pacheco",
+                "email": "pablo.sg.pacheco@gmail.com"
+            }
+        ],
+        "support": {
+            "source": "https://github.com/thanks-to-it/wp-design-patterns/tree/master",
+            "issues": "https://github.com/thanks-to-it/wp-design-patterns/issues"
+        }
+    }
+]

@@ -1,0 +1,65 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "cfe94042cbd71406a3e6bbaf1bd03f6a",
+    "packages": [
+        {
+            "name": "thanks-to-it/wp-design-patterns",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thanks-to-it/wp-design-patterns.git",
+                "reference": "ff3dbc5e1aeb74d446cf200d8fd17d6c7ae05096"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thanks-to-it/wp-design-patterns/zipball/ff3dbc5e1aeb74d446cf200d8fd17d6c7ae05096",
+                "reference": "ff3dbc5e1aeb74d446cf200d8fd17d6c7ae05096",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/classes/"
+                ],
+                "exclude-from-classmap": [
+                    "/Tests/",
+                    "/test/",
+                    "/tests/"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pablo Pacheco",
+                    "email": "pablo.sg.pacheco@gmail.com"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/thanks-to-it/wp-design-patterns/tree/master",
+                "issues": "https://github.com/thanks-to-it/wp-design-patterns/issues"
+            },
+            "time": "2019-09-06T23:42:16+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "thanks-to-it/wp-design-patterns": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.6.0"
+    },
+    "platform-dev": []
+}
