@@ -276,19 +276,19 @@
         "source": {
             "type": "git",
             "url": "https://github.com/thanks-to-it/extended-wp.git",
-            "reference": "f1b9b04b45706701b8f600053ddfc23479205f02"
+            "reference": "94d92f79b9fbaa0496698e98d5eb755ad5e619ee"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/thanks-to-it/extended-wp/zipball/f1b9b04b45706701b8f600053ddfc23479205f02",
-            "reference": "f1b9b04b45706701b8f600053ddfc23479205f02",
+            "url": "https://api.github.com/repos/thanks-to-it/extended-wp/zipball/94d92f79b9fbaa0496698e98d5eb755ad5e619ee",
+            "reference": "94d92f79b9fbaa0496698e98d5eb755ad5e619ee",
             "shasum": ""
         },
         "require": {
             "php": ">=5.6.0",
             "thanks-to-it/wp-design-patterns": "dev-master"
         },
-        "time": "2019-10-22T00:27:54+00:00",
+        "time": "2019-10-22T01:18:38+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {

@@ -61,7 +61,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Status_Tax' ) ) {
 			$tax_manager->create_terms( array(
 				'tax_id'      => $this->tax_id,
 				'terms'       => $this->get_default_terms(),
-				'option_name' => 'erwc_referral_status_terms'
+				'check_option' => 'erwc_referral_status_terms'
 			) );
 		}
 

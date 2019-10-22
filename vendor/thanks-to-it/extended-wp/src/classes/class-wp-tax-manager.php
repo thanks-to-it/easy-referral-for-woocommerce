@@ -29,14 +29,16 @@ if ( ! class_exists( 'ThanksToIT\ExtendedWP\WP_Tax_Manager' ) ) {
 			$args = wp_parse_args( $args, array(
 				'tax_id'      => '',
 				'terms'       => array(),
-				'option_name' => $args['tax_id'] . '_' . 'terms',
+				'check_option' => $args['tax_id'] . '_' . 'terms',
+				'save_option' => '',
+				'save_as' => 'array', // array | single
 				'only_once'   => true
 			) );
-
 			$tax_id      = $args['tax_id'];
 			$terms       = $args['terms'];
-			$option_name = $args['option_name'];
-			if ( $args['only_once'] && !empty( get_option( $option_name, array() ) ) ) {
+			$check_option = $args['check_option'];
+			$save_option = !empty($args['save_option']) ? $args['save_option'] : $check_option;
+			if ( $args['only_once'] && !empty( get_option( $check_option, array() ) ) ) {
 				return;
 			}
 			register_taxonomy( $args['tax_id'], '', array() );
@@ -48,8 +50,12 @@ if ( ! class_exists( 'ThanksToIT\ExtendedWP\WP_Tax_Manager' ) ) {
 				}
 			}
 
-			if ( $args['only_once'] ) {
-				update_option( $option_name, $terms_ids );
+			if ( $args['only_once'] ) {			
+				if('array'===$args['save_as']){
+					update_option( $save_option, $terms_ids );
+				}else{
+					update_option( $save_option, $terms_ids[0] );
+				}
 			}
 		}
 

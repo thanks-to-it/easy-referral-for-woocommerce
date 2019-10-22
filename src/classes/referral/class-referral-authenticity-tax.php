@@ -63,7 +63,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Authenticity_Tax' ) ) {
 			$tax_manager->create_terms( array(
 				'tax_id'      => $this->tax_id,
 				'terms'       => $this->get_default_terms(),
-				'option_name' => 'erwc_authenticity_status_terms'
+				'check_option' => 'erwc_authenticity_status_terms'
 			) );
 		}
 
