@@ -36,7 +36,7 @@ if ( ! class_exists( 'ThanksToIT\ExtendedWP\WP_Tax_Manager' ) ) {
 			$tax_id      = $args['tax_id'];
 			$terms       = $args['terms'];
 			$option_name = $args['option_name'];
-			if ( $args['only_once'] && count( get_option( $option_name, array() ) ) > 0 ) {
+			if ( $args['only_once'] && !empty( get_option( $option_name, array() ) ) ) {
 				return;
 			}
 			register_taxonomy( $args['tax_id'], '', array() );

@@ -253,18 +253,18 @@
         "source": {
             "type": "git",
             "url": "https://github.com/origgami/CMB2-grid.git",
-            "reference": "08811b58b62565a9b281e6d1c6583618e1040347"
+            "reference": "ad2b6163164a805bb89d07deb955e3a7ee5c72a8"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/origgami/CMB2-grid/zipball/08811b58b62565a9b281e6d1c6583618e1040347",
-            "reference": "08811b58b62565a9b281e6d1c6583618e1040347",
+            "url": "https://api.github.com/repos/origgami/CMB2-grid/zipball/ad2b6163164a805bb89d07deb955e3a7ee5c72a8",
+            "reference": "ad2b6163164a805bb89d07deb955e3a7ee5c72a8",
             "shasum": ""
         },
         "require": {
             "composer/installers": ">=v1.1.0"
         },
-        "time": "2017-12-08T15:38:30+00:00",
+        "time": "2019-10-17T11:50:17+00:00",
         "type": "wordpress-plugin",
         "installation-source": "dist",
         "notification-url": "https://packagist.org/downloads/"
@@ -276,19 +276,19 @@
         "source": {
             "type": "git",
             "url": "https://github.com/thanks-to-it/extended-wp.git",
-            "reference": "cfde1ef2971b0315dfdda8f0a38641f1c09f7c3b"
+            "reference": "f1b9b04b45706701b8f600053ddfc23479205f02"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/thanks-to-it/extended-wp/zipball/cfde1ef2971b0315dfdda8f0a38641f1c09f7c3b",
-            "reference": "cfde1ef2971b0315dfdda8f0a38641f1c09f7c3b",
+            "url": "https://api.github.com/repos/thanks-to-it/extended-wp/zipball/f1b9b04b45706701b8f600053ddfc23479205f02",
+            "reference": "f1b9b04b45706701b8f600053ddfc23479205f02",
             "shasum": ""
         },
         "require": {
             "php": ">=5.6.0",
             "thanks-to-it/wp-design-patterns": "dev-master"
         },
-        "time": "2019-09-07T02:55:13+00:00",
+        "time": "2019-10-22T00:27:54+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {

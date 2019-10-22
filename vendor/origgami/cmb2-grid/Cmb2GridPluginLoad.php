@@ -6,6 +6,7 @@ if ( ! defined( 'CMB2GRID_DIR' ) ) {
 	define( 'CMB2GRID_DIR', trailingslashit( dirname( __FILE__ ) ) );
 }
 
+
 if ( ! class_exists( '\Cmb2Grid\Cmb2GridPlugin' ) ) {
 
 	require_once dirname( __FILE__ ) . '/DesignPatterns/Singleton.php';

@@ -1,6 +1,6 @@
 === Easy Referral for WooCommerce ===
 Contributors: karzin
-Tags: referral,affiliate,referee,refereer,woocommerce
+Tags: referral,affiliate,referee,referrer,woocommerce
 Requires at least: 4.4
 Tested up to: 5.2
 Stable tag: 1.0.0
