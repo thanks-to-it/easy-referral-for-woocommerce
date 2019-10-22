@@ -20,6 +20,67 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_Authenticity' ) ) {
 			add_filter( 'erwc_settings_authenticity', array( $this, 'get_settings' ) );
 		}
 
+		/**
+		 * get_authentication_methods.
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @return mixed
+		 * @throws \ReflectionException
+		 */
+		function get_authentication_methods() {
+			$methods = apply_filters( 'erwc_authenticity_checking_methods', array() );
+			$fields  = array();
+
+			for ( $i = 0; $i < count( $methods ); $i ++ ) {
+				$method   = $methods[ $i ];
+				$pretty_i = $i + 1;
+				$fields[] = array(
+					array(
+						'name' => "#{$pretty_i} - {$method['title']}",
+						'type' => "title",
+						'desc' => "{$method['desc']}",
+						'id'   => "erwc_auth_checking_section_" . $method['id'],
+					),
+					array(
+						'type'    => 'checkbox',
+						'id'      => "erwc_auth_checking_enable_" . $method['id'],
+						'name'    => __( 'Enable', 'easy-referral-for-woocommerce' ),
+						'desc'    => __( 'Enable', 'easy-referral-for-woocommerce' ),
+						'default' => 'yes',
+					),
+					array(
+						'type'     => 'select',
+						'class'    => 'wc-enhanced-select',
+						'id'       => "erwc_auth_checking_status_" . $method['id'],
+						'desc_tip' => __( "Once the possible fraud is detected this is how it's going to be displayed.", 'easy-referral-for-woocommerce' ),
+						//'desc'     => __( 'The way this checking will be displayed if valid', 'easy-referral-for-woocommerce' ),
+						'name'     => __( 'Checking Result', 'easy-referral-for-woocommerce' ),
+						'options'  => ERWC()->factory->get_referral_checking_tax()->get_registered_terms( array( 'get_only' => 'id_and_title' ) ),
+						'default'  => "{$method['default_status_id']}",
+					),
+					array(
+						'type' => 'sectionend',
+						'id'   => "erwc_auth_checking_section_" . $method['id'],
+					)
+				);
+			}
+
+			return call_user_func_array( 'array_merge', $fields );
+		}
+
+		/**
+		 * get_settings.
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param $settings
+		 *
+		 * @return array
+		 * @throws \ReflectionException
+		 */
 		function get_settings( $settings ) {
 			$settings = array(
 
@@ -39,7 +100,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_Authenticity' ) ) {
 				array(
 					'name' => __( 'Authenticity Status', 'easy-referral-for-woocommerce' ),
 					'type' => 'title',
-					'desc' => __( 'How Referrals will be set according to Authenticity Checking.', 'easy-referral-for-woocommerce' ).'<br />'.__( 'If an Authenticity Checking detects some possible fraud, the correspondent Referral will be set as not Reliable.', 'easy-referral-for-woocommerce' ).'<br />'.sprintf(
+					'desc' => __( 'How Referrals will be set according to Authenticity Checking.', 'easy-referral-for-woocommerce' ) . '<br />' . __( 'If an Authenticity Checking detects some possible fraud, the correspondent Referral will be set as not Reliable.', 'easy-referral-for-woocommerce' ) . '<br />' . sprintf(
 							__( 'You can edit the statuses as you want accessing <a href="%s">Referrals > Authenticity</a>', 'easy-referral-for-woocommerce' ),
 							add_query_arg( array(
 								'taxonomy'  => ERWC()->factory->get_referral_authenticity_tax()->tax_id,
@@ -70,9 +131,6 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_Authenticity' ) ) {
 					'type' => 'sectionend',
 					'id'   => 'erwc_section_auth_status'
 				),
-
-
-				// Authentication Methods
 				array(
 					'name' => __( 'Authenticity Checking', 'easy-referral-for-woocommerce' ),
 					'type' => 'title',
@@ -80,29 +138,16 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_Authenticity' ) ) {
 					'id'   => 'erwc_section_auth_methods',
 				),
 				array(
-					'type'    => 'checkbox',
-					'id'      => 'erwc_opt_checking_email',
-					'name'    => __( 'Email Comparing', 'easy-referral-for-woocommerce' ),
-					'desc'    => __( 'Enable', 'easy-referral-for-woocommerce' ),
-					'desc_tip'    => __( 'Checks if Referrer and Referee emails are identical.', 'easy-referral-for-woocommerce' ),
-					'default' => 'yes',
-				),
-				array(
-					'type'     => 'select',
-					'class'    => 'wc-enhanced-select',
-					'id'       => 'erwc_opt_checking_email_status',
-					'desc_tip' => __( "Once the possible fraud is detected this is how it's going to be displayed.", 'easy-referral-for-woocommerce' ),
-					//'desc'     => __( 'The way this checking will be displayed if valid', 'easy-referral-for-woocommerce' ),
-					'name'     => __( ' &nbsp;', 'easy-referral-for-woocommerce' ),
-					'options'  => ERWC()->factory->get_referral_checking_tax()->get_registered_terms( array( 'get_only' => 'id_and_title' ) ),
-					'default'  => ERWC()->factory->get_referral_checking_tax()->get_probably_email_checking_id(),
-				),
-				array(
 					'type' => 'sectionend',
 					'id'   => 'erwc_section_auth_methods'
 				),
 			);
 
+			// Authenticity Methods
+			$setting_field = wp_list_filter( $settings, array( 'type' => 'sectionend', 'id' => 'erwc_section_auth_methods' ) );
+			reset( $setting_field );
+			$setting_field_key = key( $setting_field );
+			array_splice( $settings, $setting_field_key + 1, 0, $this->get_authentication_methods() );
 
 			return $settings;
 		}

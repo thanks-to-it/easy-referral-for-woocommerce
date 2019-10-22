@@ -22,7 +22,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Authenticity_Checking' ) ) {
 		function init() {
 			// Authenticity Checking Methods
 			add_filter( 'erwc_authenticity_checking_methods', array( $this, 'add_checking_methods' ) );
-			add_filter( 'erwc_authenticity_checking_' . 'email-comparing', array( $this, 'check_email_comparing' ), 10, 3 );
+			add_filter( 'erwc_authenticity_checking_' . 'email_comparing', array( $this, 'check_email_comparing' ), 10, 3 );
 
 			// Check Authenticity
 			add_action( 'erwc_creating_or_updating_referral', array( $this, 'check_authenticity' ), 10, 3 );
@@ -40,13 +40,13 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Authenticity_Checking' ) ) {
 		 * @throws \ReflectionException
 		 */
 		function add_checking_methods( $checking_methods ) {
-			if ( 'yes' === get_option( 'erwc_opt_checking_email', 'yes' ) ) {
-				$checking_methods[] = array(
-					'id'                 => 'email-comparing',
-					'title'              => __( 'Email Comparing', 'easy-referral-for-woocommerce' ),
-					'checking_status_id' => get_option( 'erwc_opt_checking_email_status', ERWC()->factory->get_referral_checking_tax()->get_probably_email_checking_id() )
-				);
-			}
+			$checking_methods[] = array(
+				'id'                => 'email_comparing',
+				'desc'              => __( 'Checks if Referrer and Referee emails are identical.', 'easy-referral-for-woocommerce' ),
+				'title'             => __( 'Email Comparing', 'easy-referral-for-woocommerce' ),
+				'default_status_id' => ERWC()->factory->get_referral_checking_tax()->get_probably_email_checking_id(),
+				//'checking_status_id' => get_option( 'erwc_opt_checking_email_status', ERWC()->factory->get_referral_checking_tax()->get_probably_email_checking_id() )
+			);
 			return $checking_methods;
 		}
 
@@ -96,21 +96,24 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Authenticity_Checking' ) ) {
 
 			$referral_checking_statuses = array();
 			foreach ( $this->checking_methods as $method ) {
-				$checking_response = apply_filters( "erwc_authenticity_checking_{$method['id']}", array( 'fraud_detected' => false, 'checking_report' => '' ), $referrer_code, $order );
-				if ( true === $checking_response['fraud_detected'] ) {
+				if ( 'yes' === get_option( "erwc_auth_checking_enable_" . $method['id'], 'yes' ) ) {
+					$checking_response = apply_filters( "erwc_authenticity_checking_{$method['id']}", array( 'fraud_detected' => false, 'checking_report' => '' ), $referrer_code, $order );
+					if ( true === $checking_response['fraud_detected'] ) {
 
-					// Referral checking status
-					$referral_checking_statuses[] = (int) $this->get_checking_method_by_id( $method['id'] )['checking_status_id'];
+						// Referral checking status
+						//$referral_checking_statuses[] = (int) $this->get_checking_method_by_id( $method['id'] )['checking_status_id'];
+						$referral_checking_statuses[] = (int) get_option( "erwc_auth_checking_status_" . $method['id'], $method['default_status_id'] );
 
-					//Set referral authenticity status
-					$authenticity_status_id = get_option( 'erwc_opt_auth_not_reliable_status', ERWC()->factory->get_referral_authenticity_tax()->get_probably_not_reliable_status_id() );
+						//Set referral authenticity status
+						$authenticity_status_id = get_option( 'erwc_opt_auth_not_reliable_status', ERWC()->factory->get_referral_authenticity_tax()->get_probably_not_reliable_status_id() );
 
-					// Set referral checking report
-					if ( ! empty( $checking_response['checking_report'] ) ) {
-						$reports                  = get_post_meta( $referral_id, '_erwc_checking_reports', true );
-						$reports                  = empty( $reports ) ? array() : $reports;
-						$reports[ $method['id'] ] = $checking_response['checking_report'];
-						update_post_meta( $referral_id, '_erwc_checking_reports', $reports );
+						// Set referral checking report
+						if ( ! empty( $checking_response['checking_report'] ) ) {
+							$reports                  = get_post_meta( $referral_id, '_erwc_checking_reports', true );
+							$reports                  = empty( $reports ) ? array() : $reports;
+							$reports[ $method['id'] ] = $checking_response['checking_report'];
+							update_post_meta( $referral_id, '_erwc_checking_reports', $reports );
+						}
 					}
 				}
 			}
