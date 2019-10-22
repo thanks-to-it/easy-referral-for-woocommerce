@@ -107,9 +107,10 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Authenticity_Checking' ) ) {
 
 					// Set referral checking report
 					if ( ! empty( $checking_response['checking_report'] ) ) {
-						$reports                  = get_post_meta( '_erwc_checking_reports', array() );
+						$reports                  = get_post_meta( $referral_id, '_erwc_checking_reports', true );
+						$reports                  = empty( $reports ) ? array() : $reports;
 						$reports[ $method['id'] ] = $checking_response['checking_report'];
-						update_post_meta( $referral_id, '_erwc_checking_reports', $reports, true );
+						update_post_meta( $referral_id, '_erwc_checking_reports', $reports );
 					}
 				}
 			}
