@@ -139,7 +139,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_CPT' ) ) {
 				SELECT SUM(pm2.meta_value) AS total
 				FROM {$wpdb->posts}
 				JOIN {$wpdb->postmeta} AS pm ON (pm.post_id = wp_posts.ID AND pm.meta_key='_erwc_referrer_id' AND pm.meta_value=%d)
-				JOIN {$wpdb->postmeta} AS pm2 ON (pm2.post_id = wp_posts.ID AND pm2.meta_key='_erwc_total_reward_value' AND pm2.meta_value <> '' AND CAST(pm2.meta_value AS signed) > 0)
+				JOIN {$wpdb->postmeta} AS pm2 ON (pm2.post_id = wp_posts.ID AND pm2.meta_key='_erwc_total_reward_value' AND pm2.meta_value <> '' AND (pm2.meta_value + 0) > 0)
 				JOIN {$wpdb->term_relationships} AS tr ON tr.object_id = ID
 				JOIN {$wpdb->term_taxonomy} AS tt ON (tt.term_taxonomy_id = tr.term_taxonomy_id AND tt.taxonomy='erwc-status')
 				JOIN {$wpdb->terms} AS t ON (t.term_id = tt.term_id AND t.slug='%s')
