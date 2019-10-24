@@ -97,7 +97,6 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referrer_Meta' ) ) {
 			$user_id = get_current_user_id();
 			?>
 			<form class="woocommerce-referrer-details" action="" method="post">
-
 				<?php
 				$fields = $this->get_fields();
 				foreach ( $fields as $key => $field_args ) {
@@ -106,7 +105,6 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referrer_Meta' ) ) {
 					woocommerce_form_field( $key, $field_args, $value );
 				}
 				?>
-
 				<p>
 					<button type="submit" class="woocommerce-Button button" name=""
 					        value="<?php _e( 'Save', 'easy-referral-for-woocommerce' ); ?>"><?php _e( 'Save', 'easy-referral-for-woocommerce' ); ?>
@@ -131,7 +129,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referrer_Meta' ) ) {
 					'type'        => 'textarea',
 					//'description' => __( 'Add any type of payment details', 'easy-referral-for-woocommerce' ),
 					'label'       => __( 'Payment Details', 'easy-referral-for-woocommerce' ),
-					'placeholder' => __( 'Add here any type of detail you would like to use to receive your payment, e.g. Paypal Email, IBAN, Bank Name...', 'easy-referral-for-woocommerce' ),
+					'placeholder' => __( 'Add any type of detail you would like to use to receive payments, e.g. Paypal Email, IBAN, Bank Name...', 'easy-referral-for-woocommerce' ),
 				),
 				'erwc_personal_id'     => array(
 					'type'        => 'text',

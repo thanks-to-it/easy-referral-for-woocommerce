@@ -32,6 +32,16 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Shortcodes' ) ) {
 			add_filter( 'erwc_referral_sections_content', array( $this, 'get_referral_sections_content' ), 10, 2 );
 		}
 
+		/**
+		 * erwc_referrer_details.
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param null $args
+		 *
+		 * @throws \ReflectionException
+		 */
 		function erwc_referrer_details( $args = null ) {
 			echo ERWC()->factory->get_referrer_meta()->get_referrer_details_frontend_form();
 		}
@@ -94,7 +104,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Shortcodes' ) ) {
 			$sections = $this->get_referral_sections();
 			reset( $sections );
 			$first_key            = key( $sections );
-			$query_string_section = isset( $_GET['section'] ) ? $_GET['section'] : $first_key;
+			$query_string_section = isset( $_GET['section'] ) ? sanitize_text_field( $_GET['section'] ) : $first_key;
 			$content              = apply_filters( 'erwc_referral_sections_content', '', $query_string_section );
 			return $content;
 		}
@@ -112,7 +122,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Shortcodes' ) ) {
 			$sections = $this->get_referral_sections();
 			reset( $sections );
 			$first_key            = key( $sections );
-			$query_string_section = isset( $_GET['section'] ) ? $_GET['section'] : $first_key;
+			$query_string_section = isset( $_GET['section'] ) ? sanitize_text_field( $_GET['section'] ) : $first_key;
 			ob_start();
 			?>
 			<div class="erwc-referrals-tab-sections erwc-vseparator-wrapper">
@@ -218,7 +228,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Shortcodes' ) ) {
 				'current_month'  => __( 'Current Month', 'easy-referral-for-woocommerce' ),
 				'previous_month' => __( 'Previous Month', 'easy-referral-for-woocommerce' ),
 			);
-			$query_string_period = isset( $_GET['period'] ) ? $_GET['period'] : 'current_month';
+			$query_string_period = isset( $_GET['period'] ) ? sanitize_text_field( $_GET['period'] ) : 'current_month';
 			?>
 			<div class="erwc-referrals-period-filter erwc-vseparator-wrapper">
 				<?php foreach ( $periods as $key => $period ): ?>

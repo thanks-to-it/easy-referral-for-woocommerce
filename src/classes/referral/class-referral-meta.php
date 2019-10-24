@@ -34,7 +34,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Meta' ) ) {
 			add_action( 'erwc_referral_cpt_created', array( $this, 'on_referral_cpt_created' ) );
 		}
 
-		function handle_authenticity_checking_fields(){
+		function handle_authenticity_checking_fields() {
 			$cmb = new_cmb2_box( array(
 				'id'           => 'erwc_referral_authenticity_metabox',
 				'title'        => esc_html__( 'Authenticity Checking Result', 'easy-referral-for-woocommerce' ),
@@ -50,7 +50,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Meta' ) ) {
 			) );
 
 			$cmb2Grid = new \Cmb2Grid\Grid\Cmb2Grid( $cmb );
-			$row = $cmb2Grid->addRow();
+			$row      = $cmb2Grid->addRow();
 			$row->addColumns(
 				array( $field7 )
 			);
@@ -80,7 +80,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Meta' ) ) {
 
 			$cmb = new_cmb2_box( array(
 				'id'           => 'erwc_referral_metabox',
-				'cmb_styles' => false,
+				'cmb_styles'   => false,
 				'title'        => esc_html__( 'Info', 'easy-referral-for-woocommerce' ),
 				'object_types' => array( $this->cpt_id ),
 			) );
@@ -123,11 +123,11 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Meta' ) ) {
 			) );
 
 			$field5 = $cmb->add_field( array(
-				'name'         => esc_html__( 'Reward Value', 'easy-referral-for-woocommerce' ),
-				'desc'         => esc_html__( 'Reward Value based on Reward Type', 'easy-referral-for-woocommerce' ),
-				'id'           => '_erwc_reward_value',
+				'name' => esc_html__( 'Reward Value', 'easy-referral-for-woocommerce' ),
+				'desc' => esc_html__( 'Reward Value based on Reward Type', 'easy-referral-for-woocommerce' ),
+				'id'   => '_erwc_reward_value',
 				//'attributes'   => array('style'=>'width:95%'),
-				'type'         => 'text',
+				'type' => 'text',
 			) );
 
 			$field6 = $cmb->add_field( array(
@@ -152,7 +152,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Meta' ) ) {
 			$cmb2Grid = new \Cmb2Grid\Grid\Cmb2Grid( $cmb );
 			$row      = $cmb2Grid->addRow();
 			$row->addColumns(
-				array( $field1, $field2, $field3)
+				array( $field1, $field2, $field3 )
 			);
 			$row = $cmb2Grid->addRow();
 			$row->addColumns(
@@ -220,7 +220,9 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Meta' ) ) {
 						}
 					}
 					$output .= '<dt><strong>' . $method_title . '</strong></dt>';
-					$output .= '<dd>' . $v . '</dd>';
+					if ( ! empty( $method_title ) ) {
+						$output .= '<dd>' . $v . '</dd>';
+					}
 				}
 			}
 			$output .= '<dl>';
