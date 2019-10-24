@@ -75,8 +75,8 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Meta' ) ) {
 		 * @since   1.0.0
 		 */
 		function handle_info_fields() {
-			$current_post_id = isset( $_REQUEST['post'] ) ? $_REQUEST['post'] : null;
-			$current_post_id = empty( $current_post_id ) && isset( $_REQUEST['post_ID'] ) ? $_REQUEST['post_ID'] : $current_post_id;
+			$current_post_id = isset( $_REQUEST['post'] ) ? filter_var( $_REQUEST['post'], FILTER_SANITIZE_NUMBER_INT ) : null;
+			$current_post_id = empty( $current_post_id ) && isset( $_REQUEST['post_ID'] ) ? filter_var( $_REQUEST['post_ID'], FILTER_SANITIZE_NUMBER_INT ) : $current_post_id;
 
 			$cmb = new_cmb2_box( array(
 				'id'           => 'erwc_referral_metabox',
