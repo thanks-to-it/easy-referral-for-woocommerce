@@ -89,6 +89,13 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Core' ) ) {
 
 			// Referrer Meta
 			$this->factory->get_referrer_meta()->init();
+
+			// Enhanced Settings
+			$enhanced_admin_settings = $this->factory->get_instance( 'Admin\Enhanced_Admin_Settings' );
+			$enhanced_admin_settings->init( 'erwc', array() );
+
+			// Notices
+			$enhanced_admin_settings = $this->factory->get_instance( 'Admin\Admin_Notices' )->init();
 		}
 
 		/**

@@ -17,7 +17,9 @@ Increase sales by letting customers promote your site with a Referral plugin.
 == How does it work? ==
 * Customers will be able to share a special URL of the site, becoming Referrers.
 
-* Once this URL is visited by other users (Referees) and converting on a sale, Referrers will receive a reward defined by the shop owner.
+* Once this URL is visited by other users (Referees) and they make a purchase, a new Referral will be created.
+
+* Referrers will receive a reward defined by the shop owner if the referral is considered valid.
 
 == Frequently Asked Questions ==
 
@@ -26,6 +28,9 @@ A Referrer is a Customer that can share a special URL of the site with other use
 
 = What is a Referee? =
 A Referee is an user that accesses a special URL of the site shared by a Referrer and makes a purchase
+
+= Is there an option to pay the Referrers? =
+No, this plugin, at least for now, can't be used to pay the Referrers. It will simply collect their payment details.
 
 = How can I contribute? Is there a github repository? =
 If you are interested in contributing - head over to the [Referral System for WooCommerce plugin GitHub Repository](https://github.com/thanks-to-it/easy-referral-for-woocommerce) to find out how you can pitch in.

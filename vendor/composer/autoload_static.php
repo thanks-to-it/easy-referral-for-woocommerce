@@ -131,6 +131,7 @@ class ComposerStaticInit388317ddb8ba9a995646d8e5a9adb025
         'Hashids\\Math\\MathInterface' => __DIR__ . '/..' . '/hashids/hashids/src/Math/MathInterface.php',
         'ThanksToIT\\DPWP\\Factory' => __DIR__ . '/..' . '/thanks-to-it/wp-design-patterns/src/classes/class-factory.php',
         'ThanksToIT\\DPWP\\Singleton' => __DIR__ . '/..' . '/thanks-to-it/wp-design-patterns/src/classes/class-singleton.php',
+        'ThanksToIT\\ERWC\\Admin\\Admin_Notices' => __DIR__ . '/../..' . '/src/classes/admin/class-admin-notices.php',
         'ThanksToIT\\ERWC\\Admin\\Admin_Settings' => __DIR__ . '/../..' . '/src/classes/admin/class-admin-settings.php',
         'ThanksToIT\\ERWC\\Admin\\Admin_Settings_Authenticity' => __DIR__ . '/../..' . '/src/classes/admin/class-admin-settings-authenticity.php',
         'ThanksToIT\\ERWC\\Admin\\Admin_Settings_General' => __DIR__ . '/../..' . '/src/classes/admin/class-admin-settings-general.php',

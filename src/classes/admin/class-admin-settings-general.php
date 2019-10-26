@@ -96,6 +96,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 				),
 				array(
 					'type'              => 'number',
+					'allowed_values'    => array( 1 ),
 					'id'                => 'erwc_opt_codes_total',
 					'name'              => __( 'Referral Codes Amount', 'easy-referral-for-woocommerce' ),
 					'desc_tip'          => __( 'The total amount of Referral Codes.', 'easy-referral-for-woocommerce' ),

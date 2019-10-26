@@ -41,12 +41,10 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings' ) ) {
 		 * @return array
 		 */
 		public function get_sections() {
-
 			$sections = array(
-				'' => __( 'General', 'easy-referral-for-woocommerce' ),
+				''             => __( 'General', 'easy-referral-for-woocommerce' ),
 				'authenticity' => __( 'Authenticity', 'easy-referral-for-woocommerce' )
 			);
-
 			return apply_filters( 'woocommerce_get_sections_' . $this->id, $sections );
 		}
 
@@ -61,11 +59,8 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings' ) ) {
 		 * @return array Array of settings
 		 */
 		public function get_settings( $current_section = '' ) {
-
 			if ( '' == $current_section ) {
-
 				$settings = apply_filters( 'erwc_settings_general', array() );
-
 			} elseif ( 'authenticity' === $current_section ) {
 				$settings = apply_filters( "erwc_settings_{$current_section}", array() );
 			}
@@ -78,7 +73,6 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings' ) ) {
 			 * @param array $settings Array of the plugin settings
 			 */
 			return apply_filters( 'woocommerce_get_settings_' . $this->id, $settings, $current_section );
-
 		}
 
 		/**
@@ -87,9 +81,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings' ) ) {
 		 * @since 1.0.0
 		 */
 		public function output() {
-
 			global $current_section;
-
 			$settings = $this->get_settings( $current_section );
 			\WC_Admin_Settings::output_fields( $settings );
 		}
@@ -100,9 +92,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings' ) ) {
 		 * @since 1.0.0
 		 */
 		public function save() {
-
 			global $current_section;
-
 			$settings = $this->get_settings( $current_section );
 			\WC_Admin_Settings::save_fields( $settings );
 		}

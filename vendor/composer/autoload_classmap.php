@@ -108,6 +108,7 @@ return array(
     'Hashids\\Math\\MathInterface' => $vendorDir . '/hashids/hashids/src/Math/MathInterface.php',
     'ThanksToIT\\DPWP\\Factory' => $vendorDir . '/thanks-to-it/wp-design-patterns/src/classes/class-factory.php',
     'ThanksToIT\\DPWP\\Singleton' => $vendorDir . '/thanks-to-it/wp-design-patterns/src/classes/class-singleton.php',
+    'ThanksToIT\\ERWC\\Admin\\Admin_Notices' => $baseDir . '/src/classes/admin/class-admin-notices.php',
     'ThanksToIT\\ERWC\\Admin\\Admin_Settings' => $baseDir . '/src/classes/admin/class-admin-settings.php',
     'ThanksToIT\\ERWC\\Admin\\Admin_Settings_Authenticity' => $baseDir . '/src/classes/admin/class-admin-settings-authenticity.php',
     'ThanksToIT\\ERWC\\Admin\\Admin_Settings_General' => $baseDir . '/src/classes/admin/class-admin-settings-general.php',
