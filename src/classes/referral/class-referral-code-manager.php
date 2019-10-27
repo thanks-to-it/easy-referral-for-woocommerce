@@ -41,6 +41,9 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Code_Manager' ) ) {
 			// Validate Referrer code by Referrer Usage Limit
 			add_filter( 'erwc_apply_referral_code_validation', array( $this, 'validate_referrer_code_by_referrer_usage_limit' ), 10, 3 );
 
+			// Check if Referrer code is from current user
+			add_filter( 'erwc_apply_referral_code_validation', array( $this, 'disallow_referral_from_own_user' ), 10, 3 );
+
 			// Apply coupon code from referrer code
 			//add_action( 'woocommerce_before_cart_table', array( $this, 'apply_discount_programmatically' ) );
 			//add_action( 'woocommerce_before_checkout_form', array( $this, 'apply_discount_programmatically' ) );
@@ -51,6 +54,30 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Code_Manager' ) ) {
 				$validation =false;
 				$this->validate_referrer_code_by_referrer_usage_limit($validation,$code,$order);
 			});*/
+		}
+
+		/**
+		 * disallow_referral_from_own_user
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param $valid
+		 * @param $referrer_code
+		 * @param $order
+		 *
+		 * @return bool
+		 */
+		function disallow_referral_from_own_user( $valid, $referrer_code, $order ) {
+			$decoded = $this->decode_referrer_code( $referrer_code );
+			if (
+				! is_user_logged_in() ||
+				$decoded['referrer_id'] != get_current_user_id()
+			) {
+				return $valid;
+			}
+			$valid = false;
+			return $valid;
 		}
 
 		/**
