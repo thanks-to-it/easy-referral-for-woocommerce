@@ -64,6 +64,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Core' ) ) {
 
 				// WC Coupon
 				$this->factory->get_wc_coupon()->init();
+
 			}
 		}
 
@@ -132,6 +133,8 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Core' ) ) {
 			);
 			return parent::add_action_links( array_merge( $mylinks, $links ) );
 		}
+
+
 
 	}
 }

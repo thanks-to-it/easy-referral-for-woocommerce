@@ -45,7 +45,16 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Authenticity_Checking' ) ) {
 				'desc'              => __( 'Checks if Referrer and Referee emails are identical.', 'easy-referral-for-woocommerce' ),
 				'title'             => __( 'Email Comparing', 'easy-referral-for-woocommerce' ),
 				'default_status_id' => ERWC()->factory->get_referral_checking_tax()->get_probably_email_checking_id(),
+				'default'           => 'yes',
 				//'checking_status_id' => get_option( 'erwc_opt_checking_email_status', ERWC()->factory->get_referral_checking_tax()->get_probably_email_checking_id() )
+			);
+			$checking_methods[] = array(
+				'id'                => 'ip_comparing',
+				'disable'           => apply_filters( 'erwc_is_free_version', true ),
+				'default'           => true === apply_filters( 'erwc_is_free_version', true ) ? 'no' : 'yes',
+				'desc'              => __( 'Checks if Referrer and Referee IPs are identical.', 'easy-referral-for-woocommerce' ),
+				'title'             => __( 'IP Comparing', 'easy-referral-for-woocommerce' ),
+				'default_status_id' => get_option( 'erwc_opt_ip_comparing_status_default' )
 			);
 			return $checking_methods;
 		}

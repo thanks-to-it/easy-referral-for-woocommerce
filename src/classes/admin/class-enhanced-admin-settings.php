@@ -74,7 +74,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Enhanced_Admin_Settings' ) ) {
 		 * @return array
 		 */
 		function handle_disable_param( $settings ) {
-			$fields = wp_list_filter( $settings, array( 'disabled' => true ) );
+			$fields = wp_list_filter( $settings, array( 'disable' => true ) );
 			foreach ( $fields as $key => $field ) {
 				$settings[ $key ]['custom_attributes']['disabled'] = 'disabled';
 				$settings[ $key ]['custom_attributes']['readonly'] = 'readonly';

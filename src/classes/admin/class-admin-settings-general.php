@@ -27,6 +27,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 			add_filter( 'erwc_settings_general', array( $this, 'get_settings' ) );
 		}
 
+
 		/**
 		 * update_salt_option_value.
 		 *
@@ -59,7 +60,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 				array(
 					'name' => __( 'Easy Referral for WooCommerce', 'easy-referral-for-woocommerce' ),
 					'type' => 'title',
-					'desc' => __( 'General Options.', 'easy-referral-for-woocommerce' ),
+					'desc' => __( 'General Options.', 'easy-referral-for-woocommerce' ) . ERWC()->factory->get_instance( 'Admin\Admin_Settings' )->get_disabled_options_message(),
 					'id'   => 'erwc_section_general',
 				),
 				array(
@@ -96,7 +97,8 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 				),
 				array(
 					'type'              => 'number',
-					'allowed_values'    => array( 1 ),
+					'allowed_values'    => true === apply_filters( 'erwc_is_free_version', true ) ? array(1) : '',
+					'disable'           => apply_filters( 'erwc_is_free_version', true ),
 					'id'                => 'erwc_opt_codes_total',
 					'name'              => __( 'Referral Codes Amount', 'easy-referral-for-woocommerce' ),
 					'desc_tip'          => __( 'The total amount of Referral Codes.', 'easy-referral-for-woocommerce' ),

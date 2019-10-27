@@ -33,6 +33,70 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings' ) ) {
 			add_action( 'woocommerce_settings_' . $this->id, array( $this, 'output' ) );
 			add_action( 'woocommerce_settings_save_' . $this->id, array( $this, 'save' ) );
 			add_action( 'woocommerce_sections_' . $this->id, array( $this, 'output_sections' ) );
+			add_action( 'admin_head', array( $this, 'admin_style' ) );
+		}
+
+		/**
+		 * get_default_messages.
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @param $message_type
+		 *
+		 * @return string
+		 */
+		function get_default_message( $message_type ) {
+			$message = '';
+			switch ( $message_type ) {
+				case 'disabled_options':
+					$message = '<br /><span class="erwc-inline-message" style="margin-top:3px;">' . sprintf( __( 'Disabled options can be unlocked using the <a href="%s" target="_blank">premium version</a>.', 'easy-referral-for-woocommerce' ), 'https://wpfactory.com/item/easy-referral-for-woocommerce/' ) . '</span>';
+					break;
+			}
+			return $message;
+		}
+
+		/**
+		 * get_disabled_option_message.
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @return string
+		 */
+		function get_disabled_options_message(){
+			return true === ( apply_filters( 'erwc_is_free_version', true ) ) ? $this->get_default_message( 'disabled_options' ) : '';
+		}
+
+		/**
+		 * admin_style.
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
+		public function admin_style() {
+			if (
+				! isset( $_REQUEST['tab'] ) ||
+				! isset( $_REQUEST['page'] ) ||
+				$_REQUEST['tab'] != $this->id ||
+				$_REQUEST['page'] != 'wc-settings'
+			) {
+				return;
+			}
+			?>
+			<style>
+				.erwc-inline-message {
+					background: #e8e8e8;
+					padding: 4px 9px 6px;
+					color: #999;
+					font-size: 13px;
+					vertical-align: middle;
+					display:inline-block;
+					clear:both;
+					margin: 0px 0 0 0px;
+				}
+			</style>
+			<?php
 		}
 
 		/**

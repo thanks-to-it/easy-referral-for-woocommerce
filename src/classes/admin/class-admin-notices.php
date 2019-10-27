@@ -18,7 +18,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Notices' ) ) {
 
 	class Admin_Notices {
 		function init() {
-			add_action( 'admin_notices', array( $this, 'show_free_version_notice' ) );
+			add_action( 'admin_notices', array( $this, 'show_free_version_notice' ),999 );
 		}
 
 		function can_display_free_version_notice() {
@@ -49,7 +49,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Notices' ) ) {
 						Feel free to submit your <a
 							href="https://wordpress.org/support/plugin/easy-referral-for-woocommerce/" target="_blank">ideas / suggestions / bugs</a> too.
 						<br />
-						<a style="display:inline-block;margin:15px 0 5px 0" href="https://wordpress.org/support/plugin/easy-referral-for-woocommerce/reviews/#new-post" target="_blank" class="button button-primary">Add Review</a>
+						<a style="display:inline-block;margin:15px 0 5px 0" href="https://wordpress.org/support/plugin/easy-referral-for-woocommerce/reviews/#new-post" target="_blank" class="button button-primary">Add a Review</a>
 					</p>
 				</div>
 			<?php else: ?>

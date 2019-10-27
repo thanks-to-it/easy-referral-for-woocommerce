@@ -45,13 +45,15 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_Authenticity' ) ) {
 					),
 					array(
 						'type'    => 'checkbox',
+						'disable' => isset( $method['disable'] ) ? $method['disable'] : false,
 						'id'      => "erwc_auth_checking_enable_" . $method['id'],
 						'name'    => __( 'Enable', 'easy-referral-for-woocommerce' ),
 						'desc'    => __( 'Enable', 'easy-referral-for-woocommerce' ),
-						'default' => 'yes',
+						'default' => isset( $method['default'] ) ? $method['default'] : 'no',
 					),
 					array(
 						'type'     => 'select',
+						'disable'  => isset( $method['disable'] ) ? $method['disable'] : false,
 						'class'    => 'wc-enhanced-select',
 						'id'       => "erwc_auth_checking_status_" . $method['id'],
 						'desc_tip' => __( "Once the possible fraud is detected this is how it's going to be displayed.", 'easy-referral-for-woocommerce' ),
@@ -88,7 +90,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_Authenticity' ) ) {
 				array(
 					'name' => __( 'Referral Authenticity', 'easy-referral-for-woocommerce' ),
 					'type' => 'title',
-					'desc' => __( 'This section provides options that will try to check Referrals Authenticity.', 'easy-referral-for-woocommerce' ),
+					'desc' => __( 'This section provides options that will try to check Referrals Authenticity.', 'easy-referral-for-woocommerce' ).ERWC()->factory->get_instance( 'Admin\Admin_Settings' )->get_disabled_options_message(),
 					'id'   => 'erwc_section_general',
 				),
 				array(
