@@ -28,6 +28,9 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Code_Manager' ) ) {
 			// Detect referrer code on query string
 			add_action( 'wp_loaded', array( $this, 'detect_referrer_code_on_query_string' ) );
 
+			// Force wc session
+			add_action( 'woocommerce_init', array( $this, 'force_non_logged_user_wc_session' ) );
+
 			// Apply Referral Code on Order
 			add_action( 'woocommerce_checkout_create_order', array( $this, 'apply_referral_code_on_order' ), 10, 2 );
 			add_action( 'erwc_before_apply_referral_code', array( $this, 'remove_referrer_code_from_wc_session' ) );
@@ -37,6 +40,11 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Code_Manager' ) ) {
 
 			// Validate Referrer code by Referrer Usage Limit
 			add_filter( 'erwc_apply_referral_code_validation', array( $this, 'validate_referrer_code_by_referrer_usage_limit' ), 10, 3 );
+
+			add_action('wp_footer',function(){
+				$referrer_code = ERWC()->factory->get_session()->get_session_var( 'erwc_referrer_code' );
+				error_log($referrer_code);
+			});
 
 			// Apply coupon code from referrer code
 			//add_action( 'woocommerce_before_cart_table', array( $this, 'apply_discount_programmatically' ) );
@@ -48,6 +56,23 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Code_Manager' ) ) {
 				$validation =false;
 				$this->validate_referrer_code_by_referrer_usage_limit($validation,$code,$order);
 			});*/
+		}
+
+		/**
+		 * force_non_logged_user_wc_session.
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
+		function force_non_logged_user_wc_session() {
+			if ( is_user_logged_in() || is_admin() ) {
+				return;
+			}
+			if ( isset( WC()->session ) ) {
+				if ( ! WC()->session->has_session() ) {
+					WC()->session->set_customer_session_cookie( true );
+				}
+			}
 		}
 
 		/**
@@ -167,7 +192,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Code_Manager' ) ) {
 		 * @version 1.0.0
 		 * @since   1.0.0
 		 */
-		function apply_discount_programmatically() {
+		/*function apply_discount_programmatically() {
 			$referrer_code = ERWC()->factory->get_session()->get_session_var( 'erwc_referrer_code' );
 			if ( empty( $referrer_code ) ) {
 				return;
@@ -187,7 +212,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Code_Manager' ) ) {
 			if ( ! WC()->cart->has_discount( $code->coupon_code ) ) {
 				WC()->cart->add_discount( $code->coupon_code );
 			}
-		}
+		}*/
 
 		/**
 		 * apply_referral_code_on_order.
