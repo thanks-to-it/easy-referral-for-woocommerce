@@ -53,6 +53,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_Authenticity' ) ) {
 					),
 					array(
 						'type'     => 'select',
+						'hide'     => isset( $method['hide_checking_result'] ) ? $method['hide_checking_result'] : false,
 						'disable'  => isset( $method['disable'] ) ? $method['disable'] : false,
 						'class'    => 'wc-enhanced-select',
 						'id'       => "erwc_auth_checking_status_" . $method['id'],
