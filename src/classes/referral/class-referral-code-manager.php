@@ -41,11 +41,6 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Code_Manager' ) ) {
 			// Validate Referrer code by Referrer Usage Limit
 			add_filter( 'erwc_apply_referral_code_validation', array( $this, 'validate_referrer_code_by_referrer_usage_limit' ), 10, 3 );
 
-			add_action('wp_footer',function(){
-				$referrer_code = ERWC()->factory->get_session()->get_session_var( 'erwc_referrer_code' );
-				error_log($referrer_code);
-			});
-
 			// Apply coupon code from referrer code
 			//add_action( 'woocommerce_before_cart_table', array( $this, 'apply_discount_programmatically' ) );
 			//add_action( 'woocommerce_before_checkout_form', array( $this, 'apply_discount_programmatically' ) );
