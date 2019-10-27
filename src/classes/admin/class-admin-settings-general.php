@@ -97,7 +97,8 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 				),
 				array(
 					'type'              => 'number',
-					'allowed_values'    => true === apply_filters( 'erwc_is_free_version', true ) ? array(1) : '',
+					//'allowed_values'    => true === apply_filters( 'erwc_is_free_version', true ) ? array(1) : '',
+					'allowed_values'    => array(1),
 					'disable'           => apply_filters( 'erwc_is_free_version', true ),
 					'id'                => 'erwc_opt_codes_total',
 					'name'              => __( 'Referral Codes Amount', 'easy-referral-for-woocommerce' ),
