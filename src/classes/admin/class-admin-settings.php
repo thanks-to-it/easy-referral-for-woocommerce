@@ -50,7 +50,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings' ) ) {
 			$message = '';
 			switch ( $message_type ) {
 				case 'disabled_options':
-					$message = '<br /><span class="erwc-inline-message" style="margin-top:3px;"><i class="erwc-icon star-icon dashicons-before dashicons-star-filled"></i>' . sprintf( __( 'Disabled options can be unlocked using the <a href="%s" target="_blank">premium version</a>', 'easy-referral-for-woocommerce' ), 'https://wpfactory.com/item/easy-referral-for-woocommerce/' ) . '</span>';
+					$message = '<br /><span class="erwc-inline-message" style="margin-top:3px;"><i class="erwc-icon star-icon dashicons-before dashicons-awards"></i>' . sprintf( __( 'Disabled options can be unlocked using the <a href="%s" target="_blank">premium version</a>', 'easy-referral-for-woocommerce' ), 'https://wpfactory.com/item/easy-referral-for-woocommerce/' ) . '</span>';
 					break;
 			}
 			return $message;
@@ -86,21 +86,21 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings' ) ) {
 			?>
 			<style>
 				.erwc-icon{
-					margin:3px 3px 0 -2px;
+					margin:3px 2px 0 -4px;
 					line-height:1px;
 					position:relative;
 					display:inline-block;
-					top:-1px;
+					top:-1px;					
 				}
 				.erwc-icon:before{
-					font-size:16px;
+					font-size:20px;
 					vertical-align: middle;
-					color:#c3c3c3;
+					color:#999;
 				}
 				.erwc-inline-message {
 					background: #e8e8e8;
 					padding: 4px 9px 4px;
-					color: #999;
+					color: #888;
 					font-size: 13px;
 					vertical-align: middle;
 					display:inline-block;
