@@ -17,10 +17,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Notices' ) ) {
 
 	class Admin_Notices {
+
+		/**
+		 * init.
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
 		function init() {
 			add_action( 'admin_notices', array( $this, 'show_free_version_notice' ),999 );
 		}
 
+		/**
+		 * can_display_free_version_notice.
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @return bool
+		 */
 		function can_display_free_version_notice() {
 			return
 				true !== apply_filters( 'erwc_is_free_version', true, 'show_free_version_notice' ) ||
@@ -30,6 +45,12 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Notices' ) ) {
 				$_REQUEST['page'] != 'wc-settings';
 		}
 
+		/**
+		 * show_free_version_notice.
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
 		function show_free_version_notice() {
 			if ( $this->can_display_free_version_notice() ) {
 				return;

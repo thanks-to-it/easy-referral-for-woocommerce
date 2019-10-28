@@ -19,6 +19,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Referral_Code_Admin_Settings' ) ) {
 
 	class Referral_Code_Admin_Settings {
+
+		/**
+		 * get_settings.
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @return array
+		 * @throws \ReflectionException
+		 */
 		function get_settings() {
 			$amount = get_option( 'erwc_opt_codes_total', 1 );
 

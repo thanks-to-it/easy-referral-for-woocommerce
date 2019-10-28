@@ -27,7 +27,6 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 			add_filter( 'erwc_settings_general', array( $this, 'get_settings' ) );
 		}
 
-
 		/**
 		 * update_salt_option_value.
 		 *

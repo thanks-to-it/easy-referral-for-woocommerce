@@ -16,6 +16,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_Authenticity' ) ) {
 
 	class Admin_Settings_Authenticity {
+
+		/**
+		 * Admin_Settings_Authenticity constructor.
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 */
 		public function __construct() {
 			add_filter( 'erwc_settings_authenticity', array( $this, 'get_settings' ) );
 		}

@@ -64,7 +64,6 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Core' ) ) {
 
 				// WC Coupon
 				$this->factory->get_wc_coupon()->init();
-
 			}
 		}
 
