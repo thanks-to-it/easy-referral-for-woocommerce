@@ -2,7 +2,7 @@
 /**
  * Easy Referral for WooCommerce - Referral Code Manager
  *
- * @version 1.0.0
+ * @version 1.0.1
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -83,7 +83,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Code_Manager' ) ) {
 		/**
 		 * force_non_logged_user_wc_session.
 		 *
-		 * @version 1.0.0
+		 * @version 1.0.1
 		 * @since   1.0.0
 		 */
 		function force_non_logged_user_wc_session() {

@@ -38,7 +38,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Notices' ) ) {
 		 */
 		function can_display_free_version_notice() {
 			return
-				true !== apply_filters( 'erwc_is_free_version', true, 'show_free_version_notice' ) ||
+				//true !== apply_filters( 'erwc_is_free_version', true, 'show_free_version_notice' ) ||
 				! isset( $_REQUEST['tab'] ) ||
 				! isset( $_REQUEST['page'] ) ||
 				$_REQUEST['tab'] != 'erwc' ||
