@@ -74,7 +74,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Email' ) ) {
 			$message       = '<p>' . sprintf( esc_html__( 'Hi %s,', 'woocommerce' ), esc_html( $referrer->display_name ) ) . '</p>';
 			$message       .= '<p>' . esc_html__( 'You have a new Referral.', 'easy-referral-for-woocommerce' ) . '</p>';
 			$message       .= '<h2>' . wp_kses_post( sprintf( __( '[Referral #%s]', 'easy-referral-for-woocommerce' ) . ' (<time datetime="%s">%s</time>)', $referral_id, get_the_date( get_option( 'c' ), $referral_post ), get_the_date( get_option( 'date_format' ), $referral_post ) ) ) . '</h2>';
-			$message       .= do_shortcode( '[erwc_referrals_table period_filter="false" cols="code,reward,status" referrer_id="'.$code_meta->referrer_id.'" table_style="email" referral_id="' . $referral_id . '"]' );
+			$message       .= do_shortcode( '[erwc_referrals_table cols="code,reward,status" referrer_id="'.$code_meta->referrer_id.'" table_style="email" referral_id="' . $referral_id . '"]' );
 			$message       .= '<div style="margin-bottom: 40px;"></div>';
 			$message       .= '<p>' . sprintf( __( 'Please access your <a href="%s">Referrals page</a> to see more details.', 'easy-referral-for-woocommerce' ), ERWC()->factory->get_referral_tab()->get_endpoint_url() ) . '</p>';
 			$subject       = __( 'You Have a new Referral', 'easy-referral-for-woocommerce' ) . ' (' . get_the_date( get_option( 'date_format' ), $referral_post ) . ')';
