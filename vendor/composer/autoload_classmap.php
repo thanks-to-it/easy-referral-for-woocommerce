@@ -112,6 +112,7 @@ return array(
     'ThanksToIT\\ERWC\\Admin\\Admin_Settings' => $baseDir . '/src/classes/admin/class-admin-settings.php',
     'ThanksToIT\\ERWC\\Admin\\Admin_Settings_Authenticity' => $baseDir . '/src/classes/admin/class-admin-settings-authenticity.php',
     'ThanksToIT\\ERWC\\Admin\\Admin_Settings_General' => $baseDir . '/src/classes/admin/class-admin-settings-general.php',
+    'ThanksToIT\\ERWC\\Admin\\Admin_Settings_Interface' => $baseDir . '/src/classes/admin/class-admin-settings-interface.php',
     'ThanksToIT\\ERWC\\Admin\\Enhanced_Admin_Settings' => $baseDir . '/src/classes/admin/class-enhanced-admin-settings.php',
     'ThanksToIT\\ERWC\\Admin\\Referral_Code_Admin_Settings' => $baseDir . '/src/classes/admin/class-referral-code-admin-settings.php',
     'ThanksToIT\\ERWC\\Authenticity_Checking' => $baseDir . '/src/classes/class-authenticity-checking.php',

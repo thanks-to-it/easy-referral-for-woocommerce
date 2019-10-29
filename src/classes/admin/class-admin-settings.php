@@ -2,7 +2,7 @@
 /**
  * Easy Referral for WooCommerce - Admin Settings
  *
- * @version 1.0.0
+ * @version 1.0.2
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -50,7 +50,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings' ) ) {
 			$message = '';
 			switch ( $message_type ) {
 				case 'disabled_options':
-					$message = '<br /><span class="erwc-inline-message" style="margin-top:3px;"><i class="erwc-icon star-icon dashicons-before dashicons-awards"></i>' . sprintf( __( 'Disabled options can be unlocked using the <a href="%s" target="_blank">premium version</a>', 'easy-referral-for-woocommerce' ), 'https://wpfactory.com/item/easy-referral-for-woocommerce/' ) . '</span>';
+					$message = '<br /><span class="erwc-inline-message" style="margin-top:3px;"><i class="erwc-icon dashicons-before dashicons-awards"></i>' . sprintf( __( 'Disabled options can be unlocked using the <a href="%s" target="_blank">premium version</a>', 'easy-referral-for-woocommerce' ), 'https://wpfactory.com/item/easy-referral-for-woocommerce/' ) . '</span>';
 					break;
 			}
 			return $message;
@@ -114,12 +114,16 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings' ) ) {
 		/**
 		 * Get sections.
 		 *
+		 * @version 1.0.2
+		 * @since   1.0.0
+		 *
 		 * @return array
 		 */
 		public function get_sections() {
 			$sections = array(
 				''             => __( 'General', 'easy-referral-for-woocommerce' ),
-				'authenticity' => __( 'Authenticity', 'easy-referral-for-woocommerce' )
+				'authenticity' => __( 'Authenticity', 'easy-referral-for-woocommerce' ),
+				'interface'    => __( 'Interface', 'easy-referral-for-woocommerce' )
 			);
 			return apply_filters( 'woocommerce_get_sections_' . $this->id, $sections );
 		}
@@ -127,7 +131,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings' ) ) {
 		/**
 		 * Get settings array.
 		 *
-		 * @version 1.0.0
+		 * @version 1.0.2
 		 * @since   1.0.0
 		 *
 		 * @param string $current_section Optional. Defaults to empty string.
@@ -138,6 +142,8 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings' ) ) {
 			if ( '' == $current_section ) {
 				$settings = apply_filters( 'erwc_settings_general', array() );
 			} elseif ( 'authenticity' === $current_section ) {
+				$settings = apply_filters( "erwc_settings_{$current_section}", array() );
+			} elseif ( 'interface' === $current_section ) {
 				$settings = apply_filters( "erwc_settings_{$current_section}", array() );
 			}
 

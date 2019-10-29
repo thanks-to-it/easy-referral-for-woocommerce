@@ -2,7 +2,7 @@
 /**
  * Easy Referral for WooCommerce - Authenticity Checking
  *
- * @version 1.0.0
+ * @version 1.0.1
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -31,7 +31,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Authenticity_Checking' ) ) {
 		/**
 		 * add_checking_methods.
 		 *
-		 * @version 1.0.0
+		 * @version 1.0.1
 		 * @since   1.0.0
 		 *
 		 * @param $checking_methods
@@ -56,6 +56,15 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Authenticity_Checking' ) ) {
 				'desc'                 => __( 'Checks if Referrer and Referee IPs are identical.', 'easy-referral-for-woocommerce' ),
 				'title'                => __( 'IP Comparing', 'easy-referral-for-woocommerce' ),
 				'default_status_id'    => get_option( 'erwc_opt_ip_comparing_status_default' )
+			);
+			$checking_methods[] = array(
+				'id'                   => 'cookie_searching',
+				'disable'              => apply_filters( 'erwc_is_free_version', true ),
+				'hide_checking_result' => apply_filters( 'erwc_is_free_version', true ),
+				'default'              => true === apply_filters( 'erwc_is_free_version', true ) ? 'no' : 'yes',
+				'desc'                 => __( 'Looks for the Referral Code in a Cookie.', 'easy-referral-for-woocommerce' ),
+				'title'                => __( 'Cookie Searching', 'easy-referral-for-woocommerce' ),
+				'default_status_id'    => get_option( 'erwc_opt_cookie_searching_status_default' )
 			);
 			return $checking_methods;
 		}
@@ -106,7 +115,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Authenticity_Checking' ) ) {
 
 			$referral_checking_statuses = array();
 			foreach ( $this->checking_methods as $method ) {
-				if ( 'yes' === get_option( "erwc_auth_checking_enable_" . $method['id'], 'yes' ) ) {
+				if ( 'yes' === get_option( "erwc_auth_checking_enable_" . $method['id'], 'no' ) ) {
 					$checking_response = apply_filters( "erwc_authenticity_checking_{$method['id']}", array( 'fraud_detected' => false, 'checking_report' => '' ), $referrer_code, $order );
 					if ( true === $checking_response['fraud_detected'] ) {
 

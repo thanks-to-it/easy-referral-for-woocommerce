@@ -135,6 +135,7 @@ class ComposerStaticInit388317ddb8ba9a995646d8e5a9adb025
         'ThanksToIT\\ERWC\\Admin\\Admin_Settings' => __DIR__ . '/../..' . '/src/classes/admin/class-admin-settings.php',
         'ThanksToIT\\ERWC\\Admin\\Admin_Settings_Authenticity' => __DIR__ . '/../..' . '/src/classes/admin/class-admin-settings-authenticity.php',
         'ThanksToIT\\ERWC\\Admin\\Admin_Settings_General' => __DIR__ . '/../..' . '/src/classes/admin/class-admin-settings-general.php',
+        'ThanksToIT\\ERWC\\Admin\\Admin_Settings_Interface' => __DIR__ . '/../..' . '/src/classes/admin/class-admin-settings-interface.php',
         'ThanksToIT\\ERWC\\Admin\\Enhanced_Admin_Settings' => __DIR__ . '/../..' . '/src/classes/admin/class-enhanced-admin-settings.php',
         'ThanksToIT\\ERWC\\Admin\\Referral_Code_Admin_Settings' => __DIR__ . '/../..' . '/src/classes/admin/class-referral-code-admin-settings.php',
         'ThanksToIT\\ERWC\\Authenticity_Checking' => __DIR__ . '/../..' . '/src/classes/class-authenticity-checking.php',
