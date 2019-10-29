@@ -60,7 +60,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_Interface' ) ) {
 				),
 				array(
 					'type'     => 'checkbox',
-					'id'       => 'erwc_opt_period_filter',
+					'id'       => 'erwc_opt_interface_period_filter',
 					'disable'  => apply_filters( 'erwc_is_free_version', true ),
 					'name'     => __( 'Period Filter', 'easy-referral-for-woocommerce' ),
 					'desc'     => __( 'Enable', 'easy-referral-for-woocommerce' ),
