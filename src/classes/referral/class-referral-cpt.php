@@ -105,7 +105,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_CPT' ) ) {
 					);
 					break;
 			}*/
-			$args = apply_filters('erwc_referrals_from_user_id_args',$args);
+			$args = apply_filters('erwc_referrals_from_user_id_args',$args,$user_id);
 			$the_query = new \WP_Query( $args );
 			return $the_query;
 		}
@@ -146,7 +146,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_CPT' ) ) {
 				JOIN {$wpdb->terms} AS t ON (t.term_id = tt.term_id AND t.slug='%s')
 				WHERE post_type = 'erwc-referral' AND post_status = 'publish'
 			";
-			$sql = apply_filters('erwc_referral_total_sum_by_status_sql', $sql);
+			$sql = apply_filters('erwc_referral_total_sum_by_status_sql', $sql, $term, $args);
 			/*$query_string_period = isset( $_GET['period'] ) ? $_GET['period'] : 'current_month';
 			$today               = getdate();
 			switch ( $query_string_period ) {
