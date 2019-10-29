@@ -22,8 +22,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Shortcodes' ) ) {
 		function init() {
 			add_shortcode( 'erwc_referral_codes_table', array( $this, 'erwc_referral_codes_table' ) );
 			add_shortcode( 'erwc_referrals_table', array( $this, 'erwc_referrals_table' ) );
-			add_shortcode( 'erwc_referrals_sum_table', array( $this, 'erwc_referrals_sum_table' ) );
-			add_shortcode( 'erwc_referrals_period_filter', array( $this, 'erwc_referrals_period_filter' ) );
+			add_shortcode( 'erwc_referrals_sum_table', array( $this, 'erwc_referrals_sum_table' ) );			
 			add_shortcode( 'erwc_referral_sections', array( $this, 'erwc_referral_sections' ) );
 			add_shortcode( 'erwc_referral_sections_content', array( $this, 'erwc_referral_sections_content' ) );
 			add_shortcode( 'erwc_referrer_details', array( $this, 'erwc_referrer_details' ) );
@@ -207,43 +206,6 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Shortcodes' ) ) {
 			}
 			return array_merge( $new_cols, $columns );
 		}
-
-		/**
-		 * erwc_referrals_period_filter.
-		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
-		 *
-		 * @param $atts
-		 *
-		 * @return false|string|void
-		 * @throws \ReflectionException
-		 */
-		function erwc_referrals_period_filter( $atts ) {
-			if ( ! apply_filters( 'erwc_referrer_valid', true, get_current_user_id() ) ) {
-				return;
-			}
-			ob_start();
-			$periods             = array(
-				'current_month'  => __( 'Current Month', 'easy-referral-for-woocommerce' ),
-				'previous_month' => __( 'Previous Month', 'easy-referral-for-woocommerce' ),
-			);
-			$query_string_period = isset( $_GET['period'] ) ? sanitize_text_field( $_GET['period'] ) : 'current_month';
-			?>
-			<div class="erwc-referrals-period-filter erwc-vseparator-wrapper">
-				<?php foreach ( $periods as $key => $period ): ?>
-					<?php $url = add_query_arg( array( 'period' => $key ), ERWC()->factory->get_referral_tab()->get_endpoint_url() ); ?>
-					<?php $active_class = ! empty( $query_string_period ) && $key === $query_string_period ? 'active' : '' ?>
-					<span class="erwc-vseparator erwc-period <?php echo $active_class; ?>">
-						<a href="<?php echo esc_html( $url ) ?>"><?php esc_html_e( $period ) ?></a>
-					</span>
-				<?php endforeach; ?>
-			</div>
-			<?php
-			return ob_get_clean();
-		}
-
-
 
 		/**
 		 * erwc_referrals_sum_table.
