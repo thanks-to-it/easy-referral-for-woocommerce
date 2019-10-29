@@ -61,10 +61,11 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_Interface' ) ) {
 				array(
 					'type'     => 'checkbox',
 					'id'       => 'erwc_opt_period_filter',
+					'disable'  => apply_filters( 'erwc_is_free_version', true ),
 					'name'     => __( 'Period Filter', 'easy-referral-for-woocommerce' ),
 					'desc'     => __( 'Enable', 'easy-referral-for-woocommerce' ),
 					'desc_tip' => __( 'Allows to filter Referrals by period (current month and previous month for now)', 'easy-referral-for-woocommerce' ),
-					'default'  => 'yes',
+					'default'  => 'no',
 				),
 				array(
 					'type' => 'sectionend',
