@@ -33,7 +33,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\My_Account\Referral_Tab' ) ) {
 			add_action( "woocommerce_account_{$this->id}_endpoint", array( $this, 'add_content' ) );
 			add_filter( 'the_title', array( $this, 'handle_endpoint_title' ) );
 			add_action( 'woocommerce_after_account_navigation', array( $this, 'add_custom_css' ) );
-			add_action( 'erwc_referral_tab_content', array( $this, 'add_sections' ), 10 );
+			add_action( 'erwc_referral_tab_content', array( $this, 'add_referral_sections' ), 10 );
 			add_action( 'erwc_referral_tab_content', array( $this, 'add_sections_content' ), 15 );
 		}
 
