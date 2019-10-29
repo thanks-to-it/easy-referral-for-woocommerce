@@ -174,7 +174,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_CPT' ) ) {
 		/**
 		 * create_referral_from_order.
 		 *
-		 * @version 1.0.0
+		 * @version 1.0.2
 		 * @since   1.0.0
 		 *
 		 * @param $order_id
@@ -187,7 +187,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_CPT' ) ) {
 			$referrer_code = get_post_meta( $order_id, '_erwc_referrer_code', true );
 			if (
 				empty( $referrer_code ) ||
-				'completed' != $to
+				! in_array( $to, apply_filters( 'erwc_referral_creation_order_status', array( 'completed' ) ) )
 			) {
 				return;
 			}
@@ -219,7 +219,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_CPT' ) ) {
 				$referral_id = wp_insert_post( array(
 					'post_title'  => __( 'Referral', 'referral-system-for-woocommerce' ),
 					'post_type'   => $this->cpt_id,
-					'post_date'   => $order->get_date_completed()->date("Y-m-d H:i:s"),
+					'post_date'   => $order->get_date_completed()->date( "Y-m-d H:i:s" ),
 					'post_status' => 'publish',
 					'meta_input'  => $meta_input
 				), true );

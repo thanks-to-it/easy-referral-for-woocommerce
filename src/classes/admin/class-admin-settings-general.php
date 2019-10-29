@@ -2,7 +2,7 @@
 /**
  * Easy Referral for WooCommerce - Admin Settings General
  *
- * @version 1.0.0
+ * @version 1.0.2
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -45,7 +45,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 		/**
 		 * get_settings.
 		 *
-		 * @version 1.0.0
+		 * @version 1.0.2
 		 * @since   1.0.0
 		 *
 		 * @param $settings
@@ -85,6 +85,16 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 					'name'     => __( 'Defaut Referral Status', 'easy-referral-for-woocommerce' ),
 					'options'  => ERWC()->factory->get_referral_status_tax()->get_registered_terms( array( 'get_only' => 'id_and_title' ) ),
 					'default'  => ERWC()->factory->get_referral_status_tax()->get_probably_unpaid_status_id(),
+				),
+				array(
+					'type'     => 'multiselect',
+					'class'    => 'wc-enhanced-select',
+					'disable'  => apply_filters( 'erwc_is_free_version', true ),
+					'id'       => 'erwc_opt_referral_creation_order_status',
+					'desc_tip' => __( 'The status an order needs to change to in order to create the Referral.', 'easy-referral-for-woocommerce' ),
+					'name'     => __( 'Referral Creation Order Status', 'easy-referral-for-woocommerce' ),
+					'options'  => wc_get_order_statuses(),
+					'default'  => array('wc-completed')
 				),
 				array(
 					'type'     => 'text',

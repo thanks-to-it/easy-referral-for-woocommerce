@@ -55,7 +55,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_Interface' ) ) {
 				array(
 					'name' => __( 'Frontend', 'easy-referral-for-woocommerce' ),
 					'type' => 'title',
-					'desc' => __( 'Options regarding User Interface', 'easy-referral-for-woocommerce' ),
+					'desc' => __( 'User Interface options that will be displayed on the Frontend', 'easy-referral-for-woocommerce' ),
 					'id'   => 'erwc_section_interface_frontend',
 				),
 				array(
