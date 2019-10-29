@@ -319,13 +319,10 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Shortcodes' ) ) {
 			// Shortcode atts
 			$atts = shortcode_atts( array(
 				'cols'          => '',
-				'period_filter' => get_option( 'erwc_opt_interface_period_filter', 'no' ),
 				'referrer_id'   => get_current_user_id(),
 				'table_style'   => 'default', // default | email
 				'referral_id'   => - 1,
 			), $atts, 'erwc_referrals_table' );
-
-			$period_filter = filter_var( $atts['period_filter'], FILTER_VALIDATE_BOOLEAN );
 
 			// Get specific Referral
 			$query_args = array();
@@ -340,9 +337,6 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Shortcodes' ) ) {
 			$the_query = ERWC()->factory->get_referral_cpt()->get_referrals_from_user_id( $atts['referrer_id'], $query_args );
 			ob_start();
 			?>
-			<?php if($period_filter):?>
-				<?php echo do_shortcode( '[erwc_referrals_period_filter]' ); ?>
-			<?php endif; ?>
 			<?php if ( $the_query->have_posts() ) : ?>
 				<table <?php echo $table_params ?> class="td erwc-referrals-table my_account_orders shop_table">
 					<thead>

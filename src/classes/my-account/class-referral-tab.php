@@ -2,7 +2,7 @@
 /**
  * Easy Referral for WooCommerce - Referral Tab
  *
- * @version 1.0.0
+ * @version 1.0.2
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -20,6 +20,12 @@ if ( ! class_exists( 'ThanksToIT\ERWC\My_Account\Referral_Tab' ) ) {
 
 		public $id = 'erwc-referral';
 
+		/**
+		 * add_sections_content.
+		 *
+		 * @version 1.0.2
+		 * @since   1.0.0
+		 */
 		public function __construct() {
 			add_action( 'init', array( $this, 'add_endpoint' ) );
 			add_filter( 'query_vars', array( $this, 'add_query_vars' ), 1 );
@@ -27,6 +33,28 @@ if ( ! class_exists( 'ThanksToIT\ERWC\My_Account\Referral_Tab' ) ) {
 			add_action( "woocommerce_account_{$this->id}_endpoint", array( $this, 'add_content' ) );
 			add_filter( 'the_title', array( $this, 'handle_endpoint_title' ) );
 			add_action( 'woocommerce_after_account_navigation', array( $this, 'add_custom_css' ) );
+			add_action( 'erwc_referral_tab_content', array( $this, 'add_sections' ), 10 );
+			add_action( 'erwc_referral_tab_content', array( $this, 'add_sections_content' ), 15 );
+		}
+
+		/**
+		 * add_sections_content.
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
+		function add_sections_content() {
+			echo do_shortcode( '[erwc_referral_sections_content]' );
+		}
+
+		/**
+		 * add_referral_sections.
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 */
+		function add_referral_sections() {
+			echo do_shortcode( '[erwc_referral_sections]' );
 		}
 
 		/**
@@ -175,8 +203,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\My_Account\Referral_Tab' ) ) {
 		 * @since   1.0.0
 		 */
 		function add_content() {
-			echo do_shortcode( '[erwc_referral_sections]' );
-			echo do_shortcode( '[erwc_referral_sections_content]' );
+			do_action('erwc_referral_tab_content');
 
 			//echo do_shortcode( '[erwc_referrals_period_filter]' );
            // echo do_shortcode( '[erwc_referrals_sum_table]' );
