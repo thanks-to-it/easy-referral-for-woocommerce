@@ -219,7 +219,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_CPT' ) ) {
 				$referral_id = wp_insert_post( array(
 					'post_title'  => __( 'Referral', 'referral-system-for-woocommerce' ),
 					'post_type'   => $this->cpt_id,
-					'post_date'   => $order->get_date_completed()->date( "Y-m-d H:i:s" ),
+					'post_date'   => $order->get_date_modified()->date( "Y-m-d H:i:s" ),
 					'post_status' => 'publish',
 					'meta_input'  => $meta_input
 				), true );

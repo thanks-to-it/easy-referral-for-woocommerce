@@ -115,7 +115,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Authenticity_Checking' ) ) {
 
 			$referral_checking_statuses = array();
 			foreach ( $this->checking_methods as $method ) {
-				if ( 'yes' === get_option( "erwc_auth_checking_enable_" . $method['id'], 'no' ) ) {
+				if ( 'yes' === get_option( "erwc_auth_checking_enable_" . $method['id'], 'yes' ) ) {
 					$checking_response = apply_filters( "erwc_authenticity_checking_{$method['id']}", array( 'fraud_detected' => false, 'checking_report' => '' ), $referrer_code, $order );
 					if ( true === $checking_response['fraud_detected'] ) {
 
