@@ -50,7 +50,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings' ) ) {
 			$message = '';
 			switch ( $message_type ) {
 				case 'disabled_options':
-					$message = '<br /><span class="erwc-inline-message" style="margin-top:3px;"><i class="erwc-icon dashicons-before dashicons-awards"></i>' . sprintf( __( 'Disabled options can be unlocked using the <a href="%s" target="_blank">premium version</a>', 'easy-referral-for-woocommerce' ), 'https://wpfactory.com/item/easy-referral-for-woocommerce/' ) . '</span>';
+					$message = '<br /><span class="erwc-inline-message" style="margin-top:3px;"><i class="erwc-icon dashicons-before dashicons-awards"></i>' . sprintf( __( 'Disabled options can be unlocked using the <a href="%s" target="_blank">Pro version</a>', 'easy-referral-for-woocommerce' ), 'https://wpfactory.com/item/easy-referral-for-woocommerce/' ) . '</span>';
 					break;
 			}
 			return $message;
