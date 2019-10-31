@@ -3,7 +3,7 @@
  * Plugin Name: Easy Referral for WooCommerce
  * Plugin URI: https://wordpress.org/plugins/easy-referral-for-woocommerce
  * Description: Easy Referral System for WooCommerce
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Thanks to IT
  * Author URI: https://github.com/thanks-to-it
  * License: GNU General Public License v3.0

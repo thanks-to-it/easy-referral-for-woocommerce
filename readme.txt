@@ -3,7 +3,7 @@ Contributors: karzin
 Tags: referral,affiliate,referee,referrer,woocommerce
 Requires at least: 4.4
 Tested up to: 5.2
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -53,6 +53,10 @@ If you are interested in contributing - head over to the [Referral System for Wo
 
 == Changelog ==
 
+= 1.0.2 - 30/10/2019 =
+* Improve readme
+* Add screenshots
+
 = 1.0.1 - 28/10/2019 =
 * Fix referral for guest users
 * Add notice for feedback
@@ -62,6 +66,6 @@ If you are interested in contributing - head over to the [Referral System for Wo
 
 == Upgrade Notice ==
 
-= 1.0.1 =
-* Fix referral for guest users
-* Add notice for feedback
+= 1.0.2 =
+* Improve readme
+* Add screenshots
