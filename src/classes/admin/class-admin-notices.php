@@ -55,8 +55,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Notices' ) ) {
 			if ( $this->can_display_free_version_notice() ) {
 				return;
 			}
-			//$chance = mt_rand( 0, 1 );
-			$chance = 0;
+			$chance = mt_rand( 0, 1 );
 			?>
 
 			<?php if ( $chance == 0 ) : ?>
@@ -74,30 +73,19 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Notices' ) ) {
 					</p>
 				</div>
 			<?php else: ?>
-				<!--<div class="notice notice-info">
-					<h3 class="title"><?php _e( 'Easy Referral for WooCommerce - Premium', 'easy-referral-for-woocommerce' ) ?></h3>
-					<p>Do you like the free version of this plugin?<br>Did you
-						know We also have a <a href="https://wpfactory.com/item/easy-referral-for-woocommerce/"
-						                       target="_blank">Premium one</a>?<br></p><h4>Check some of its features
-						for
-						now:</h4>
+				<div class="notice notice-info">
+					<h3 class="title"><span style="vertical-align: middle"><img style="position:relative;top:-2px;margin:0 7px 0 0;width:20px;height:20px" src="https://ps.w.org/easy-referral-for-woocommerce/assets/icon-256x256.png?rev=2179699" /></span><?php _e( 'Easy Referral for WooCommerce - Premium', 'easy-referral-for-woocommerce' ) ?></h3>
+					<p>Do you like the free version of this plugin?<br>Did you know We also have a <a href="https://wpfactory.com/item/easy-referral-for-woocommerce/" target="_blank">Premium one</a>?<br></p><h4>Check some of its features for now:</h4>
 					<ul style="list-style:disc inside;">
-						<li>Customize Pop-up style using the Customizer including Icons from FontAwesome</li>
-						<li>Customize WooCommerce Messages</li>
-						<li>Ignore messages</li>
-						<li>Avoid repeated messages</li>
-						<li>Load the plugin at some specific pages, like cart or checkout for example.</li>
-						<li>Play sounds when popup opens or closes</li>
-						<li>Hide default notices</li>
+						<li>Unlimited Referral Codes</li>
+						<li>Customizable Order Status for Referral Creation</li>
+						<li>IP Comparing</li>
+						<li>Cookie Searching</li>
+						<li>Filter Referrals by Period</li>
 						<li>Support</li>
-						<p style="margin-top:15px">Buying it will allow you managing and customizing the popup entirely,
-							helping maintaining the development of this plugin.<br>And besides you aren't going to see
-							these
-							annoying messages anymore :)</p><a style="display:inline-block;margin:15px 0 8px 0"
-						                                       target="_blank" class="button-primary"
-						                                       href="https://wpfactory.com/item/easy-referral-for-woocommerce/">Upgrade
-							to Premium version</a></ul>
-				</div>-->
+						<a style="display:inline-block;margin:15px 0 8px 0" target="_blank" class="button-primary" href="https://wpfactory.com/item/easy-referral-for-woocommerce/">Upgrade to Premium version <i style="position:relative;top:3px;" class="dashicons-before dashicons-awards"></i></a>
+					</ul>
+				</div>
 			<?php endif; ?>
 			<?php
 		}

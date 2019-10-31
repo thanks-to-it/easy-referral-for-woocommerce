@@ -23,6 +23,14 @@ Increase sales by letting customers promote your site with a Referral plugin.
 
 == Frequently Asked Questions ==
 
+= What features are available in Pro Version? =
+*Unlimited Referral Codes
+*Customizable Order Status for Referral Creation
+*IP Comparing
+*Cookie Searching
+*Filter Referrals by Period
+*Support
+
 = What is a Referrer? =
 A Referrer is a Customer that can share a special URL of the site with other users
 
