@@ -21,6 +21,9 @@ Increase sales by letting customers promote your site with a Referral plugin.
 
 * Referrers will receive a reward defined by the shop owner if the referral is considered valid.
 
+== Pro Version ==
+Pro Version can be found [here](https://wpfactory.com/item/easy-referral-for-woocommerce/)
+
 == Frequently Asked Questions ==
 
 = What features are available in Pro Version? =
