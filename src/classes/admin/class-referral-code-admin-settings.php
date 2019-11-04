@@ -71,22 +71,23 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Referral_Code_Admin_Settings' ) ) {
 						'default'  => 1,
 						'id'       => "erwc_opt_referee_usage_limit[{$i}]",
 					),
-					/*array(
-						'name'     => __( 'Coupon Code', 'easy-referral-for-woocommerce' ),
-						'desc_tip' => __( 'Bounds this Referral Code to a Coupon code, i.e., once applied this Referral Code can give the Referee a discount and might be only applied if the Coupon conditions are met.', 'easy-referral-for-woocommerce' ),
+					array(
+						'name'     => __( 'Apply Coupon Code', 'easy-referral-for-woocommerce' ),
+						'desc_tip' => __( 'Applies the Coupon Code when the Referral URL is visited, giving a discount to the Referee.', 'easy-referral-for-woocommerce' ),
+						//'desc_tip' => __( 'Bounds this Referral Code to a Coupon code, i.e., once applied this Referral Code can give the Referee a discount and might be only applied if the Coupon conditions are met.', 'easy-referral-for-woocommerce' ),
 						'id'       => "erwc_opt_code_coupon[{$i}]",
+						'disable'  => apply_filters( 'erwc_is_free_version', true ),
 						'type'     => "text",
 					),
-					array(
+					/*array(
 						'name'    => __( 'Apply Coupon', 'easy-referral-for-woocommerce' ),
 						'desc'    => __( 'Apply Coupon Code', 'easy-referral-for-woocommerce' ),
 						'desc_tip'=> __( 'Applies the Coupon Code when the Referral URL is visited, giving a discount to the Referee.', 'easy-referral-for-woocommerce' ),
-						//'desc_tip'=> __( 'Applies the Coupon Code when the Referral URL is visited.', 'easy-referral-for-woocommerce' ).'<br />'.__( 'Enable it only if you want to give a discount to the Referee.', 'easy-referral-for-woocommerce' ),
 						'id'      => "erwc_opt_code_coupon_apply[{$i}]",
 						'type'    => "checkbox",
 						'default' => 'yes'
-					),
-					array(
+					),*/
+					/*array(
 						'name'     => __( 'Use Coupon Restrictions', 'easy-referral-for-woocommerce' ),
 						'desc'     => __( 'Use Coupon restrictions', 'easy-referral-for-woocommerce' ),
 						'desc_tip' => __( 'The Referral Code will only be considered valid if Coupon conditions are met.', 'easy-referral-for-woocommerce' ).'<br />'.__( '"Usage Restriction" and "Usage Limits" Coupon tabs are in your favor.', 'easy-referral-for-woocommerce' ),

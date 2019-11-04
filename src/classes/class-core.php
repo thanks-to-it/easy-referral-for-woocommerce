@@ -60,10 +60,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Core' ) ) {
 				$this->factory->get_authenticity_checking()->init();
 
 				// Referral Code Manager
-				$this->factory->get_referral_code_manager()->init();
-
-				// WC Coupon
-				$this->factory->get_wc_coupon()->init();
+				$this->factory->get_referral_code_manager()->init();				
 			}
 		}
 

@@ -44,9 +44,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Code_Manager' ) ) {
 			// Check if Referrer code is from current user
 			add_filter( 'erwc_apply_referral_code_validation', array( $this, 'disallow_referral_from_own_user' ), 10, 3 );
 
-			// Apply coupon code from referrer code
-			//add_action( 'woocommerce_before_cart_table', array( $this, 'apply_discount_programmatically' ) );
-			//add_action( 'woocommerce_before_checkout_form', array( $this, 'apply_discount_programmatically' ) );
+			
 
 			/*add_action('init',function(){
 				$order = wc_get_order(296);
@@ -208,33 +206,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Code_Manager' ) ) {
 			<?php
 		}
 
-		/**
-		 * apply_discount_programmatically.
-		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
-		 */
-		/*function apply_discount_programmatically() {
-			$referrer_code = ERWC()->factory->get_session()->get_session_var( 'erwc_referrer_code' );
-			if ( empty( $referrer_code ) ) {
-				return;
-			}
-			$decoded = $this->decode_referrer_code( $referrer_code );
-			$code    = $this->get_referral_code( $decoded['referral_code_id'] );
-			if ( ! $code->enabled || ! $code->apply_coupon || empty( $code->coupon_code ) ) {
-				return;
-			}
-			$wc_coupon = new \WC_Coupon( $code->coupon_code );
-			if (
-				! $wc_coupon->get_id() ||
-				! apply_filters( 'erwc_apply_discount_validation', true, $wc_coupon, $referrer_code )
-			) {
-				return;
-			}
-			if ( ! WC()->cart->has_discount( $code->coupon_code ) ) {
-				WC()->cart->add_discount( $code->coupon_code );
-			}
-		}*/
+		
 
 		/**
 		 * apply_referral_code_on_order.

@@ -96,18 +96,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Factory' ) ) {
 			return $this->get_instance( 'Referrer' );
 		}*/
 
-		/**
-		 * get_wc_coupon.
-		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
-		 *
-		 * @return WC_Coupon
-		 * @throws \ReflectionException
-		 */
-		function get_wc_coupon() {
-			return $this->get_instance( 'WC_Coupon' );
-		}
+		
 
 		/**
 		 * get_referrer_meta.
