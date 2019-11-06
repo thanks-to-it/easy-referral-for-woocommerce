@@ -33,13 +33,20 @@ Pro Version can be found [here](https://wpfactory.com/item/easy-referral-for-woo
 * IP Comparing
 * Cookie Searching
 * Filter Referrals by Period
+* Manage the URL param
 * Support
+
+= What are Referral Codes? =
+Referral Codes are unique per user will be used by Referrers to create a URL that once shared and visited will reward the Referrer if the Referee makes a purchase.
 
 = What is a Referrer? =
 A Referrer is a Customer that can share a special URL of the site with other users
 
 = What is a Referee? =
 A Referee is an user that accesses a special URL of the site shared by a Referrer and makes a purchase
+
+= What is a Referral? =
+Referrals are the proof that a Referee visited a URL shared by a Referrer and has made a purchase.
 
 = Is there an option to pay the Referrers? =
 No, this plugin, at least for now, can't be used to pay the Referrers. It will simply collect their payment details.
@@ -61,6 +68,7 @@ If you are interested in contributing - head over to the [Referral System for Wo
 * Fix Referral admin fields by properly loading CMB2
 * Add "Referral URL Param" Pro option
 * Improve admin settings organization
+* Improve readme
 
 = 1.0.3 - 05/11/2019 =
 * Improve readme

@@ -83,6 +83,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Notices' ) ) {
 						<li>IP Comparing</li>
 						<li>Cookie Searching</li>
 						<li>Filter Referrals by Period</li>
+						<li>Manage the URL param</li>
 						<li>Support</li>
 						<a style="display:inline-block;margin:15px 0 8px 0" target="_blank" class="button-primary" href="https://wpfactory.com/item/easy-referral-for-woocommerce/">Upgrade to Pro version <i style="position:relative;top:3px;" class="dashicons-before dashicons-awards"></i></a>
 					</ul>
