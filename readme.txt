@@ -40,10 +40,10 @@ Pro Version can be found [here](https://wpfactory.com/item/easy-referral-for-woo
 Referral Codes are unique per user will be used by Referrers to create a URL that once shared and visited will reward the Referrer if the Referee makes a purchase.
 
 = What is a Referrer? =
-A Referrer is a Customer that can share a special URL of the site with other users
+A Referrer is a Customer that can share a special URL of the site with other users.
 
 = What is a Referee? =
-A Referee is an user that accesses a special URL of the site shared by a Referrer and makes a purchase
+A Referee is an user that accesses a special URL of the site shared by a Referrer and makes a purchase.
 
 = What is a Referral? =
 Referrals are the proof that a Referee visited a URL shared by a Referrer and has made a purchase.
