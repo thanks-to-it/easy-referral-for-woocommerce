@@ -70,6 +70,14 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 					'default' => 'yes',
 				),
 				array(
+					'type'    => 'text',
+					'id'      => 'erwc_opt_referral_url_param',
+					'disable'  => apply_filters( 'erwc_is_free_version', true ),
+					'name'    => __( 'Referral URL Param', 'easy-referral-for-woocommerce' ),
+					'desc'    => '',
+					'default' => 'erwc_code',
+				),
+				array(
 					'type'     => 'select',
 					'class'    => 'wc-enhanced-select',
 					'id'       => 'erwc_opt_referral_status',

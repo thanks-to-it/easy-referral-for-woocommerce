@@ -66,7 +66,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Notices' ) ) {
 							href="https://wordpress.org/support/plugin/easy-referral-for-woocommerce/reviews/#new-post"
 							target="_blank">writing a review</a>. It's really important :)
 						<br>
-						Feel free to submit your <a
+						Feel free to submit <a
 							href="https://wordpress.org/support/plugin/easy-referral-for-woocommerce/" target="_blank">ideas / suggestions / bugs</a> too.
 						<br />
 						<a style="display:inline-block;margin:15px 0 5px 0" href="https://wordpress.org/support/plugin/easy-referral-for-woocommerce/reviews/#new-post" target="_blank" class="button button-primary">Add a Review <i style="position:relative;top:2px;" class="dashicons-before dashicons-star-filled"></i></a>

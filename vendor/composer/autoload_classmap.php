@@ -129,7 +129,6 @@ return array(
     'ThanksToIT\\ERWC\\Referrer_Meta' => $baseDir . '/src/classes/class-referrer-meta.php',
     'ThanksToIT\\ERWC\\Session' => $baseDir . '/src/classes/class-session.php',
     'ThanksToIT\\ERWC\\Shortcodes' => $baseDir . '/src/classes/class-shortcodes.php',
-    'ThanksToIT\\ERWC\\WC_Coupon' => $baseDir . '/src/classes/class-wc-coupon.php',
     'ThanksToIT\\ExtendedWP\\WP_Plugin' => $vendorDir . '/thanks-to-it/extended-wp/src/classes/class-wp-plugin.php',
     'ThanksToIT\\ExtendedWP\\WP_Tax_Manager' => $vendorDir . '/thanks-to-it/extended-wp/src/classes/class-wp-tax-manager.php',
 );

@@ -4,8 +4,12 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit388317ddb8ba9a995646d8e5a9adb025
+class ComposerStaticInit80d212360566da11cba2f4e5fd8c75d3
 {
+    public static $files = array (
+        '0423aedac5f8d5a6ab074f4eaca1506a' => __DIR__ . '/..' . '/cmb2/cmb2/init.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         'H' => 
         array (
@@ -152,7 +156,6 @@ class ComposerStaticInit388317ddb8ba9a995646d8e5a9adb025
         'ThanksToIT\\ERWC\\Referrer_Meta' => __DIR__ . '/../..' . '/src/classes/class-referrer-meta.php',
         'ThanksToIT\\ERWC\\Session' => __DIR__ . '/../..' . '/src/classes/class-session.php',
         'ThanksToIT\\ERWC\\Shortcodes' => __DIR__ . '/../..' . '/src/classes/class-shortcodes.php',
-        'ThanksToIT\\ERWC\\WC_Coupon' => __DIR__ . '/../..' . '/src/classes/class-wc-coupon.php',
         'ThanksToIT\\ExtendedWP\\WP_Plugin' => __DIR__ . '/..' . '/thanks-to-it/extended-wp/src/classes/class-wp-plugin.php',
         'ThanksToIT\\ExtendedWP\\WP_Tax_Manager' => __DIR__ . '/..' . '/thanks-to-it/extended-wp/src/classes/class-wp-tax-manager.php',
     );
@@ -160,9 +163,9 @@ class ComposerStaticInit388317ddb8ba9a995646d8e5a9adb025
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit388317ddb8ba9a995646d8e5a9adb025::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit388317ddb8ba9a995646d8e5a9adb025::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit388317ddb8ba9a995646d8e5a9adb025::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit80d212360566da11cba2f4e5fd8c75d3::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit80d212360566da11cba2f4e5fd8c75d3::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit80d212360566da11cba2f4e5fd8c75d3::$classMap;
 
         }, null, ClassLoader::class);
     }

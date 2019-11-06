@@ -3,7 +3,7 @@ Contributors: karzin
 Tags: referral,affiliate,referee,referrer,woocommerce
 Requires at least: 4.4
 Tested up to: 5.2
-Stable tag: 1.0.3
+Stable tag: 1.0.4-dev
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -57,6 +57,10 @@ If you are interested in contributing - head over to the [Referral System for Wo
 
 == Changelog ==
 
+= 1.0.4 - 06/11/2019 =
+* Fix Referral admin fields by properly loading CMB2
+* Add "Referral URL Param" Pro option
+
 = 1.0.3 - 05/11/2019 =
 * Improve readme
 * Add option to apply a Coupon Code on Pro version giving discount to Referees
@@ -74,6 +78,6 @@ If you are interested in contributing - head over to the [Referral System for Wo
 
 == Upgrade Notice ==
 
-= 1.0.3 =
-* Improve readme
-* Add option to apply a Coupon Code on Pro version giving discount to Referees
+= 1.0.4 =
+* Fix Referral admin fields by properly loading CMB2
+* Add "Referral URL Param" Pro option
