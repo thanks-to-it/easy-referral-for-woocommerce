@@ -2,7 +2,7 @@
 /**
  * Easy Referral for WooCommerce - Code Admin Settings
  *
- * @version 1.0.0
+ * @version 1.0.3
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -23,7 +23,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Referral_Code_Admin_Settings' ) ) {
 		/**
 		 * get_settings.
 		 *
-		 * @version 1.0.0
+		 * @version 1.0.3
 		 * @since   1.0.0
 		 *
 		 * @return array

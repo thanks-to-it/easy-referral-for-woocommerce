@@ -3,7 +3,7 @@ Contributors: karzin
 Tags: referral,affiliate,referee,referrer,woocommerce
 Requires at least: 4.4
 Tested up to: 5.2
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -28,6 +28,7 @@ Pro Version can be found [here](https://wpfactory.com/item/easy-referral-for-woo
 
 = What features are available in Pro Version? =
 * Unlimited Referral Codes
+* Apply Coupong Code automatically giving a discount to Referees
 * Customizable Order Status for Referral Creation
 * IP Comparing
 * Cookie Searching
@@ -56,6 +57,10 @@ If you are interested in contributing - head over to the [Referral System for Wo
 
 == Changelog ==
 
+= 1.0.3 - 05/11/2019 =
+* Improve readme
+* Add option to apply a Coupon Code on Pro version giving discount to Referees
+
 = 1.0.2 - 30/10/2019 =
 * Improve readme
 * Add screenshots
@@ -69,6 +74,6 @@ If you are interested in contributing - head over to the [Referral System for Wo
 
 == Upgrade Notice ==
 
-= 1.0.2 =
+= 1.0.3 =
 * Improve readme
-* Add screenshots
+* Add option to apply a Coupon Code on Pro version giving discount to Referees

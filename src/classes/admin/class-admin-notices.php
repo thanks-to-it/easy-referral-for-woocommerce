@@ -2,7 +2,7 @@
 /**
  * Easy Referral for WooCommerce - Notices
  *
- * @version 1.0.0
+ * @version 1.0.3
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -48,7 +48,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Notices' ) ) {
 		/**
 		 * show_free_version_notice.
 		 *
-		 * @version 1.0.0
+		 * @version 1.0.3
 		 * @since   1.0.0
 		 */
 		function show_free_version_notice() {
@@ -78,6 +78,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Notices' ) ) {
 					<p>Do you like the free version of this plugin?<br>Did you know We also have a <a href="https://wpfactory.com/item/easy-referral-for-woocommerce/" target="_blank">Pro version</a>?<br></p><h4>Check some of its features for now:</h4>
 					<ul style="list-style:disc inside;">
 						<li>Unlimited Referral Codes</li>
+						<li>Apply Coupong Code automatically giving a discount to Referees</li>
 						<li>Customizable Order Status for Referral Creation</li>
 						<li>IP Comparing</li>
 						<li>Cookie Searching</li>
