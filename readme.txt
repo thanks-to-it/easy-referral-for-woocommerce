@@ -28,7 +28,7 @@ Pro Version can be found [here](https://wpfactory.com/item/easy-referral-for-woo
 
 = What features are available in Pro Version? =
 * Unlimited Referral Codes
-* Apply Coupong Code automatically giving a discount to Referees
+* Apply Coupon Code giving a discount to Referees
 * Customizable Order Status for Referral Creation
 * IP Comparing
 * Cookie Searching
