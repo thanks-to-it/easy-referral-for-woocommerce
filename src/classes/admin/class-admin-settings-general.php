@@ -70,12 +70,24 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 					'default' => 'yes',
 				),
 				array(
-					'type'    => 'text',
-					'id'      => 'erwc_opt_referral_url_param',
+					'type' => 'sectionend',
+					'id'   => 'erwc_section_general'
+				),
+				array(
+					'name' => __( 'Referrals', 'easy-referral-for-woocommerce' ),
+					'type' => 'title',
+					'desc' => __( 'Referrals are the proof that a Referee visited a URL shared by a Referrer and has made a purchase.', 'easy-referral-for-woocommerce' ),
+					'id'   => 'erwc_section_referrals',
+				),
+				array(
+					'type'     => 'multiselect',
+					'class'    => 'wc-enhanced-select',
 					'disable'  => apply_filters( 'erwc_is_free_version', true ),
-					'name'    => __( 'Referral URL Param', 'easy-referral-for-woocommerce' ),
-					'desc'    => '',
-					'default' => ERWC()->factory->get_referral_code_manager()->get_referral_url_param(),
+					'id'       => 'erwc_opt_referral_creation_order_status',
+					'desc_tip' => __( 'The status an order needs to change to in order to create the Referral.', 'easy-referral-for-woocommerce' ),
+					'name'     => __( 'Referral Creation Order Status', 'easy-referral-for-woocommerce' ),
+					'options'  => wc_get_order_statuses(),
+					'default'  => array('wc-completed')
 				),
 				array(
 					'type'     => 'select',
@@ -95,14 +107,22 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 					'default'  => ERWC()->factory->get_referral_status_tax()->get_probably_unpaid_status_id(),
 				),
 				array(
-					'type'     => 'multiselect',
-					'class'    => 'wc-enhanced-select',
+					'type' => 'sectionend',
+					'id'   => 'erwc_section_referrals'
+				),
+				array(
+					'name' => __( 'Referral Codes', 'easy-referral-for-woocommerce' ),
+					'type' => 'title',
+					'desc' => sprintf( __( "Referral Codes are unique per user and will be displayed on <a href='%s'>My Account > Referral > Referral Codes</a>.", 'easy-referral-for-woocommerce' ), add_query_arg( array( 'section' => 'referral_codes' ), ERWC()->factory->get_referral_tab()->get_endpoint_url() ) ) . '<br />' . __( "They will be used by Referrers to create a URL that once shared and visited will reward the Referrer if the Referee makes a purchase.", 'easy-referral-for-woocommerce' ),
+					'id'   => 'erwc_section_referral_codes',
+				),
+				array(
+					'type'    => 'text',
+					'id'      => 'erwc_opt_referral_url_param',
 					'disable'  => apply_filters( 'erwc_is_free_version', true ),
-					'id'       => 'erwc_opt_referral_creation_order_status',
-					'desc_tip' => __( 'The status an order needs to change to in order to create the Referral.', 'easy-referral-for-woocommerce' ),
-					'name'     => __( 'Referral Creation Order Status', 'easy-referral-for-woocommerce' ),
-					'options'  => wc_get_order_statuses(),
-					'default'  => array('wc-completed')
+					'name'    => __( 'URL Param', 'easy-referral-for-woocommerce' ),
+					'desc'    => '',
+					'default' => ERWC()->factory->get_referral_code_manager()->get_referral_url_param(),
 				),
 				array(
 					'type'     => 'text',
@@ -125,12 +145,11 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 				),
 				array(
 					'type' => 'sectionend',
-					'id'   => 'erwc_section_general'
+					'id'   => 'erwc_section_referral_codes'
 				),
-
 			);
 
-			$messages      = wp_list_filter( $settings, array( 'id' => 'erwc_section_general', 'type' => 'sectionend' ) );
+			$messages      = wp_list_filter( $settings, array( 'id' => 'erwc_section_referral_codes', 'type' => 'sectionend' ) );
 			$code_settings = ERWC()->factory->get_referral_code_admin_settings();
 			reset( $messages );
 			$messages_index = key( $messages );

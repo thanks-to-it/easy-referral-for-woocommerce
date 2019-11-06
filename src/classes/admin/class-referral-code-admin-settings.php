@@ -38,7 +38,6 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Referral_Code_Admin_Settings' ) ) {
 					array(
 						'name' => "Referral Code #{$i}",
 						'type' => "title",
-						'desc' => sprintf( __( "A unique code per user that will be displayed on <a href='%s'>My Account > Referral > Referral Codes</a>.", 'easy-referral-for-woocommerce' ), add_query_arg( array( 'section' => 'referral_codes' ), ERWC()->factory->get_referral_tab()->get_endpoint_url() ) ) . '<br />' . __( "It will be used to create a URL that once visited and converting on a purchase will reward the Referrer.", 'easy-referral-for-woocommerce' ),
 						'id'   => "erwc_code_section[{$i}]",
 					),
 					array(

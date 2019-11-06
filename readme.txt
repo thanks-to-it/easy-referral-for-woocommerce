@@ -60,6 +60,7 @@ If you are interested in contributing - head over to the [Referral System for Wo
 = 1.0.4 - 06/11/2019 =
 * Fix Referral admin fields by properly loading CMB2
 * Add "Referral URL Param" Pro option
+* Improve admin settings organization
 
 = 1.0.3 - 05/11/2019 =
 * Improve readme
@@ -81,3 +82,4 @@ If you are interested in contributing - head over to the [Referral System for Wo
 = 1.0.4 =
 * Fix Referral admin fields by properly loading CMB2
 * Add "Referral URL Param" Pro option
+* Improve admin settings organization
