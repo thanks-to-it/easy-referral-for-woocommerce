@@ -75,7 +75,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 					'disable'  => apply_filters( 'erwc_is_free_version', true ),
 					'name'    => __( 'Referral URL Param', 'easy-referral-for-woocommerce' ),
 					'desc'    => '',
-					'default' => 'erwc_code',
+					'default' => ERWC()->factory->get_referral_code_manager()->get_referral_url_param(),
 				),
 				array(
 					'type'     => 'select',

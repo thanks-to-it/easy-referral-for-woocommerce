@@ -426,7 +426,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Code_Manager' ) ) {
 		 */
 		function get_referrer_code_url( $referrer_code ) {
 			return add_query_arg( array(
-				$this->get_query_string_trigger_param() => $referrer_code
+				$this->get_referral_url_param() => $referrer_code
 			), trailingslashit( get_home_url() ) );
 		}
 
@@ -443,14 +443,14 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Code_Manager' ) ) {
 		}
 
 		/**
-		 * get_query_string_trigger_param.
+		 * get_referral_url_param.
 		 *
 		 * @version 1.0.0
 		 * @since   1.0.0
 		 *
 		 * @return string
 		 */
-		function get_query_string_trigger_param() {
+		function get_referral_url_param() {
 			return 'erwc_code';
 		}
 
@@ -462,10 +462,10 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Code_Manager' ) ) {
 		 * @throws \ReflectionException
 		 */
 		function detect_referrer_code_on_query_string() {
-			if ( ! isset( $_GET[ $this->get_query_string_trigger_param() ] ) ) {
+			if ( ! isset( $_GET[ $this->get_referral_url_param() ] ) ) {
 				return;
 			}
-			$referrer_code = sanitize_text_field( $_GET[ $this->get_query_string_trigger_param() ] );
+			$referrer_code = sanitize_text_field( $_GET[ $this->get_referral_url_param() ] );
 			if ( empty( $referrer_code ) ) {
 				return;
 			}
