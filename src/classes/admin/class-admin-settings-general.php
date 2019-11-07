@@ -2,7 +2,7 @@
 /**
  * Easy Referral for WooCommerce - Admin Settings General
  *
- * @version 1.0.2
+ * @version 1.0.4
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -45,7 +45,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 		/**
 		 * get_settings.
 		 *
-		 * @version 1.0.2
+		 * @version 1.0.4
 		 * @since   1.0.0
 		 *
 		 * @param $settings

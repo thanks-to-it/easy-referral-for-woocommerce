@@ -2,7 +2,7 @@
 /**
  * Easy Referral for WooCommerce - Referral Code Manager
  *
- * @version 1.0.1
+ * @version 1.0.4
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -445,7 +445,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Code_Manager' ) ) {
 		/**
 		 * get_referral_url_param.
 		 *
-		 * @version 1.0.0
+		 * @version 1.0.4
 		 * @since   1.0.0
 		 *
 		 * @return string
