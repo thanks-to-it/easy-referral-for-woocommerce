@@ -76,7 +76,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 				array(
 					'name' => __( 'Referrals', 'easy-referral-for-woocommerce' ),
 					'type' => 'title',
-					'desc' => __( 'Referrals are the proof that a Referee visited a URL shared by a Referrer and has made a purchase.', 'easy-referral-for-woocommerce' ),
+					'desc' => __( 'Referrals are the proof that a Referee visited a URL shared by a Referrer and has made a purchase.', 'easy-referral-for-woocommerce' ) . '<br />' . sprintf( __( 'The Shop Owner can view all the global Referrals accessing <a href="%s">Referrals</a>.', 'easy-referral-for-woocommerce' ), admin_url( 'edit.php?post_type=' . ERWC()->factory->get_referral_cpt()->cpt_id ) ) . '<br />' . sprintf( __( 'Referrers can see their own Referrals on <a href="%s">My Account > Referral > Referrals</a>.', 'easy-referral-for-woocommerce' ), ERWC()->factory->get_referral_tab()->get_endpoint_url() ),
 					'id'   => 'erwc_section_referrals',
 				),
 				array(
@@ -113,7 +113,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 				array(
 					'name' => __( 'Referral Codes', 'easy-referral-for-woocommerce' ),
 					'type' => 'title',
-					'desc' => sprintf( __( "Referral Codes are unique per user and will be displayed on <a href='%s'>My Account > Referral > Referral Codes</a>.", 'easy-referral-for-woocommerce' ), add_query_arg( array( 'section' => 'referral_codes' ), ERWC()->factory->get_referral_tab()->get_endpoint_url() ) ) . '<br />' . __( "They will be used by Referrers to create a URL that once shared and visited will reward the Referrer if the Referee makes a purchase.", 'easy-referral-for-woocommerce' ),
+					'desc' => sprintf( __( "Referral Codes are unique per user and will be displayed on <a href='%s'>My Account > Referral > Referral Codes</a>.", 'easy-referral-for-woocommerce' ), add_query_arg( array( 'section' => 'referral_codes' ), ERWC()->factory->get_referral_tab()->get_endpoint_url() ) ) . '<br />' . __( "They will be used by Referrers to create a URL that once shared and visited will generate a Referral if the Referee makes a purchase.", 'easy-referral-for-woocommerce' ),
 					'id'   => 'erwc_section_referral_codes',
 				),
 				array(

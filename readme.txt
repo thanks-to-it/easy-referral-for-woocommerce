@@ -37,7 +37,7 @@ Pro Version can be found [here](https://wpfactory.com/item/easy-referral-for-woo
 * Support
 
 = What are Referral Codes? =
-Referral Codes are unique per user will be used by Referrers to create a URL that once shared and visited will reward the Referrer if the Referee makes a purchase.
+Referral Codes are unique per user and will be used by Referrers to create a URL that once shared and visited will generate a Referral if the Referee makes a purchase.
 
 = What is a Referrer? =
 A Referrer is a Customer that can share a special URL of the site with other users.
