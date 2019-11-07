@@ -117,12 +117,13 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 					'id'   => 'erwc_section_referral_codes',
 				),
 				array(
-					'type'    => 'text',
-					'id'      => 'erwc_opt_referral_url_param',
+					'type'     => 'text',
+					'id'       => 'erwc_opt_referral_url_param',
 					'disable'  => apply_filters( 'erwc_is_free_version', true ),
-					'name'    => __( 'URL Param', 'easy-referral-for-woocommerce' ),
-					'desc'    => '',
-					'default' => ERWC()->factory->get_referral_code_manager()->get_referral_url_param(),
+					'name'     => __( 'URL Param', 'easy-referral-for-woocommerce' ),
+					'desc_tip' => __( 'The parameter responsible for generating the Referral URL.', 'easy-referral-for-woocommerce' ),
+					'desc'     => '<br />'.'e.g. '.ERWC()->factory->get_referral_code_manager()->get_referrer_code_url('abc123'),
+					'default'  => ERWC()->factory->get_referral_code_manager()->get_referral_url_param(),
 				),
 				array(
 					'type'     => 'text',
