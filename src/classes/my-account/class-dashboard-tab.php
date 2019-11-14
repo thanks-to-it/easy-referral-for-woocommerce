@@ -2,8 +2,8 @@
 /**
  * Easy Referral for WooCommerce - Dashboard Tab
  *
- * @version 1.0.4
- * @since   1.0.4
+ * @version 1.0.5
+ * @since   1.0.5
  * @author  Thanks to IT
  */
 
