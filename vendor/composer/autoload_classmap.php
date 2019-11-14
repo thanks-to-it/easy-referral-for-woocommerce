@@ -118,6 +118,7 @@ return array(
     'ThanksToIT\\ERWC\\Authenticity_Checking' => $baseDir . '/src/classes/class-authenticity-checking.php',
     'ThanksToIT\\ERWC\\Core' => $baseDir . '/src/classes/class-core.php',
     'ThanksToIT\\ERWC\\Factory' => $baseDir . '/src/classes/class-factory.php',
+    'ThanksToIT\\ERWC\\My_Account\\Dashboard_Tab' => $baseDir . '/src/classes/my-account/class-dashboard-tab.php',
     'ThanksToIT\\ERWC\\My_Account\\Referral_Tab' => $baseDir . '/src/classes/my-account/class-referral-tab.php',
     'ThanksToIT\\ERWC\\Referral\\Referral_Authenticity_Tax' => $baseDir . '/src/classes/referral/class-referral-authenticity-tax.php',
     'ThanksToIT\\ERWC\\Referral\\Referral_CPT' => $baseDir . '/src/classes/referral/class-referral-cpt.php',

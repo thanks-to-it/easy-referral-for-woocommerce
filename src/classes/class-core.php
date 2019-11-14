@@ -77,7 +77,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Core' ) ) {
 		/**
 		 * handle_admin.
 		 *
-		 * @version 1.0.0
+		 * @version 1.0.5
 		 * @since   1.0.0
 		 * @throws \ReflectionException
 		 */
@@ -93,6 +93,9 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Core' ) ) {
 
 			// My account > Referral tab
 			$this->factory->get_referral_tab();
+
+			// My account > Dashboard Tab
+			$this->factory->get_instance('My_Account\Dashboard_Tab')->init();
 
 			// Referrer Meta
 			$this->factory->get_referrer_meta()->init();

@@ -145,6 +145,7 @@ class ComposerStaticInit80d212360566da11cba2f4e5fd8c75d3
         'ThanksToIT\\ERWC\\Authenticity_Checking' => __DIR__ . '/../..' . '/src/classes/class-authenticity-checking.php',
         'ThanksToIT\\ERWC\\Core' => __DIR__ . '/../..' . '/src/classes/class-core.php',
         'ThanksToIT\\ERWC\\Factory' => __DIR__ . '/../..' . '/src/classes/class-factory.php',
+        'ThanksToIT\\ERWC\\My_Account\\Dashboard_Tab' => __DIR__ . '/../..' . '/src/classes/my-account/class-dashboard-tab.php',
         'ThanksToIT\\ERWC\\My_Account\\Referral_Tab' => __DIR__ . '/../..' . '/src/classes/my-account/class-referral-tab.php',
         'ThanksToIT\\ERWC\\Referral\\Referral_Authenticity_Tax' => __DIR__ . '/../..' . '/src/classes/referral/class-referral-authenticity-tax.php',
         'ThanksToIT\\ERWC\\Referral\\Referral_CPT' => __DIR__ . '/../..' . '/src/classes/referral/class-referral-cpt.php',

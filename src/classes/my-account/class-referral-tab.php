@@ -2,7 +2,7 @@
 /**
  * Easy Referral for WooCommerce - Referral Tab
  *
- * @version 1.0.2
+ * @version 1.0.5
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -33,8 +33,20 @@ if ( ! class_exists( 'ThanksToIT\ERWC\My_Account\Referral_Tab' ) ) {
 			add_action( "woocommerce_account_{$this->id}_endpoint", array( $this, 'add_content' ) );
 			add_filter( 'the_title', array( $this, 'handle_endpoint_title' ) );
 			add_action( 'woocommerce_after_account_navigation', array( $this, 'add_custom_css' ) );
+			add_action( 'woocommerce_after_account_navigation', array( $this, 'load_dashicons' ) );
+			add_action( 'woocommerce_after_account_navigation', array( $this, 'add_custom_js' ) );
 			add_action( 'erwc_referral_tab_content', array( $this, 'add_referral_sections' ), 10 );
 			add_action( 'erwc_referral_tab_content', array( $this, 'add_sections_content' ), 15 );
+		}
+
+		/**
+		 * add_sections_content.
+		 *
+		 * @version 1.0.5
+		 * @since   1.0.5
+		 */
+		function load_dashicons(){
+			wp_enqueue_style( 'dashicons' );
 		}
 
 		/**
@@ -73,22 +85,18 @@ if ( ! class_exists( 'ThanksToIT\ERWC\My_Account\Referral_Tab' ) ) {
 					font-size: 0;
 					margin: 0 0 20px 0;
 				}
-
 				.erwc-vseparator {
 					display: inline-block;
 					border-left: 1px solid #ccc;
 					padding: 0px 7px 0 7px;
 				}
-
 				.erwc-vseparator a {
 					font-size: 15px;
 				}
-
 				.erwc-vseparator:first-child {
 					border: none;
 					padding-left: 0;
 				}
-
 				.erwc-vseparator.active a {
 					cursor: default !important;
 					pointer-events: none !important;
@@ -100,9 +108,57 @@ if ( ! class_exists( 'ThanksToIT\ERWC\My_Account\Referral_Tab' ) ) {
 		}
 
 		/**
+		 * add_custom_js.
+		 *
+		 * @version 1.0.5
+		 * @since   1.0.5
+		 */
+		function add_custom_js() {
+			?>
+			<script>
+				document.addEventListener('DOMContentLoaded', function() {
+					var clipboard = {
+						copy: function (text) {
+							if (window.clipboardData && window.clipboardData.setData) {
+								// IE specific code path to prevent textarea being shown while dialog is visible.
+								return clipboardData.setData("Text", text);
+							} else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+								var textarea = document.createElement("textarea");
+								textarea.textContent = text;
+								textarea.style.position = "fixed";  // Prevent scrolling to bottom of page in MS Edge.
+								document.body.appendChild(textarea);
+								textarea.select();
+								try {
+									return document.execCommand("copy");  // Security exception may be thrown by some browsers.
+								} catch (ex) {
+									console.warn("Copy to clipboard failed.", ex);
+									return false;
+								} finally {
+									document.body.removeChild(textarea);
+								}
+							}
+						}
+					};
+					[].forEach.call(document.querySelectorAll('.erwc-copy-link-btn'), function (el) {
+						el.addEventListener('click', function (e) {
+							var link = e.currentTarget.getAttribute('data-url');
+							var target = e.currentTarget;
+							target.classList.add('active');
+							clipboard.copy(link);
+							setTimeout(function () {
+								target.classList.remove('active');
+							}, 2000);
+						})
+					})
+				});
+			</script>
+			<?php
+		}
+
+		/**
 		 * add_custom_css.
 		 *
-		 * @version 1.0.0
+		 * @version 1.0.5
 		 * @since   1.0.0
 		 */
 		function add_custom_css() {
@@ -119,6 +175,66 @@ if ( ! class_exists( 'ThanksToIT\ERWC\My_Account\Referral_Tab' ) ) {
 			<style>
 				.form-row .optional {
 					display: none;
+				}
+				.erwc-referral-codes-table td{
+					vertical-align: middle;
+				}
+				.erwc-referral-codes-table td *{
+					vertical-align: middle;
+				}
+				.erwc-copy-link-btn{
+					font-size:10px;
+					vertical-align: middle;
+					border-radius: 3px;
+					padding:0px;
+					border:none;
+					/*border:1px solid #ccc;*/
+					background:#fff;
+					width:22px;
+					height:22px;
+					position:relative;
+				}
+				.erwc-copy-link-btn:focus{
+					outline:none;
+				}
+				.erwc-copy-link-btn:hover{
+					border:none;
+					background:none;
+					/*border:1px solid #999;*/
+				}
+				.erwc-copy-link-btn:hover i:before{
+					color:#666
+				}
+				.erwc-copy-link-btn i{
+					position:absolute;
+					vertical-align: middle;
+					left: 0px;
+					transition:opacity 0.2s ease-in-out;
+				}
+				.erwc-copy-link-btn i.clipboard{
+					font-size:18px;
+					line-height:14px;
+					top:1px;
+					left:0px;
+					opacity: 1;
+				}
+				.erwc-copy-link-btn i.yes{
+					opacity: 0;
+					font-size: 30px;
+					line-height: 12px;
+					padding: 0;
+					top: -1px;
+					left: -6px;
+				}
+				.erwc-copy-link-btn.active i.yes{
+					opacity:1;
+				}
+				.erwc-copy-link-btn.active i.clipboard{
+					opacity:0;
+				}
+				.erwc-copy-link-btn i:before{
+					vertical-align: middle;
+					color:#000;
 				}
 			</style>
 			<?php

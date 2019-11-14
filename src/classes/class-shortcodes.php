@@ -2,7 +2,7 @@
 /**
  * Easy Referral for WooCommerce - Shortcodes
  *
- * @version 1.0.0
+ * @version 1.0.5
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -331,7 +331,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Shortcodes' ) ) {
 		/**
 		 * get_referral_codes_table.
 		 *
-		 * @version 1.0.0
+		 * @version 1.0.5
 		 * @since   1.0.0
 		 *
 		 * @return false|string
@@ -350,7 +350,8 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Shortcodes' ) ) {
 				<thead>
 				<tr>
 					<th width='10%'><?php _e( 'Code', 'easy-referral-for-woocommerce' ) ?></th>
-					<th><?php _e( 'Referral Code URL', 'easy-referral-for-woocommerce' ) ?></th>
+					<th><?php _e( 'Referral Code URL', 'easy-referral-for-woocommerce' ) ?> <i style="margin-left:10px;font-size:15px" class="fas fa-link"></i></th>
+					<th><?php _e( 'Copy', 'easy-referral-for-woocommerce' ) ?></th>
 				</tr>
 				</thead>
 				<tbody>
@@ -363,7 +364,10 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Shortcodes' ) ) {
 							<?php echo esc_html( $referrer_code = $code_manager->encode( $code_id, get_current_user_id() ) ) ?>
 						</td>
 						<td>
-							<?php echo esc_html( $code_manager->get_referrer_code_url( $referrer_code ) ); ?>
+							<a href="<?php echo esc_url( $code_manager->get_referrer_code_url( $referrer_code ) ); ?>"><?php echo esc_url( $code_manager->get_referrer_code_url( $referrer_code ) ); ?></a>
+						</td>
+						<td>
+							<button data-url="<?php echo esc_url( $code_manager->get_referrer_code_url( $referrer_code ) ); ?>" class="erwc-copy-link-btn"><i class="dashicons dashicons-clipboard clipboard"></i><i class="dashicons dashicons-yes yes"></i></button>
 						</td>
 					</tr>
 				<?php endforeach; ?>

@@ -2,7 +2,7 @@
 /**
  * Easy Referral for WooCommerce - Admin Settings Interface
  *
- * @version 1.0.2
+ * @version 1.0.5
  * @since   1.0.2
  * @author  Thanks to IT
  */
@@ -30,7 +30,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_Interface' ) ) {
 		/**
 		 * get_settings.
 		 *
-		 * @version 1.0.2
+		 * @version 1.0.5
 		 * @since   1.0.2
 		 *
 		 * @param $settings
@@ -57,6 +57,14 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_Interface' ) ) {
 					'type' => 'title',
 					'desc' => __( 'User Interface options that will be displayed on the Frontend', 'easy-referral-for-woocommerce' ),
 					'id'   => 'erwc_section_interface_frontend',
+				),
+				array(
+					'type'     => 'checkbox',
+					'id'       => 'erwc_opt_interface_referral_codes_dashboard',
+					'name'     => __( 'Codes on the Dashboard', 'easy-referral-for-woocommerce' ),
+					'desc'     => __( 'Show', 'easy-referral-for-woocommerce' ),
+					'desc_tip' => __( 'Display Referral Codes on My Account > Dashboard', 'easy-referral-for-woocommerce' ),
+					'default'  => 'yes',
 				),
 				array(
 					'type'     => 'checkbox',
