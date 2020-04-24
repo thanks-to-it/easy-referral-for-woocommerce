@@ -27,7 +27,8 @@
   ],
   "config": {
     "preferred-install": "dist",
-    "optimize-autoloader": true
+    "optimize-autoloader": true,
+    "vendor-dir": "src/vendor"
   },
   "require": {
     "php": ">=5.6.0",
@@ -43,16 +44,16 @@
   },
   "extra": {
     "installer-paths": {
-      "vendor/{$vendor}/{$name}": [
+      "src/vendor/{$vendor}/{$name}": [
         "type:wordpress-plugin",
         "type:wordpress-muplugin"
       ]
     }
   },
   "autoload": {
-    "files": ["vendor/cmb2/cmb2/init.php"],
+    "files": ["src/vendor/cmb2/cmb2/init.php"],
     "classmap": [
-      "src/classes/"
+      "src/app/"
     ],
     "exclude-from-classmap": [
       "/Tests/",

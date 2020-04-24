@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/assets/scss/admin/admin.scss"],"names":[],"mappings":";;;;;;;AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA,yBAAyB","file":"admin.css","sourcesContent":["/**\r\n* Tes.\r\n*\r\n* asdasd.\r\n*\r\n*/\n* {\n  border: 1px solid #fa0; }\n"],"sourceRoot":""}

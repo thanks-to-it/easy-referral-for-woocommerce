@@ -1,0 +1,27 @@
+/**
+ * Easy Referral for WooCommerce.
+ *
+ * @author Thanks to IT.
+ * @since  1.0.0
+ */
+
+.erwc-vseparator-wrapper {
+  font-size: 0;
+  margin: 0 0 20px 0; }
+
+.erwc-vseparator {
+  display: inline-block;
+  border-left: 1px solid #ccc;
+  padding: 0px 7px 0 7px; }
+  .erwc-vseparator a {
+    font-size: 15px; }
+  .erwc-vseparator:first-child {
+    border: none;
+    padding-left: 0; }
+  .erwc-vseparator.active a {
+    cursor: default !important;
+    pointer-events: none !important;
+    text-decoration: none !important; }
+
+
+/*# sourceMappingURL=frontend.css.map*/

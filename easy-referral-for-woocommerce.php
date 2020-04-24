@@ -3,7 +3,7 @@
  * Plugin Name: Easy Referral for WooCommerce
  * Plugin URI: https://wordpress.org/plugins/easy-referral-for-woocommerce
  * Description: Easy Referral System for WooCommerce
- * Version: 1.0.5
+ * Version: 1.0.6-dev
  * Author: Thanks to IT
  * Author URI: https://github.com/thanks-to-it
  * License: GNU General Public License v3.0
@@ -11,14 +11,14 @@
  * Text Domain: easy-referral-for-woocommerce
  * Domain Path: /src/languages
  * WC requires at least: 3.0.0
- * WC tested up to: 3.7
+ * WC tested up to: 4.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-require_once "vendor/autoload.php";
+require_once "src/vendor/autoload.php";
 
 // Check if WooCommerce is active
 $plugin = 'woocommerce/woocommerce.php';
@@ -43,6 +43,7 @@ if ( ! function_exists( 'ERWC' ) ) {
 
 $plugin = ERWC();
 $plugin->setup( array(
+	'version'         => '1.0.6-dev',
 	'filesystem_path' => __FILE__,
 	'text_domain'     => 'easy-referral-for-woocommerce'
 ) );

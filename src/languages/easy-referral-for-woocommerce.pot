@@ -1,0 +1,526 @@
+# Copyright (C) 2019 easy-referral-for-woocommerce
+# This file is distributed under the same license as the easy-referral-for-woocommerce package.
+msgid ""
+msgstr ""
+"Project-Id-Version: easy-referral-for-woocommerce\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../app/class-authenticity-checking.php:45
+msgid "Checks if Referrer and Referee emails are identical."
+msgstr ""
+
+#: ../app/class-authenticity-checking.php:46
+msgid "Email Comparing"
+msgstr ""
+
+#: ../app/class-authenticity-checking.php:56
+msgid "Checks if Referrer and Referee IPs are identical."
+msgstr ""
+
+#: ../app/class-authenticity-checking.php:57
+msgid "IP Comparing"
+msgstr ""
+
+#: ../app/class-authenticity-checking.php:65
+msgid "Looks for the Referral Code in a Cookie."
+msgstr ""
+
+#: ../app/class-authenticity-checking.php:66
+msgid "Cookie Searching"
+msgstr ""
+
+#: ../app/class-authenticity-checking.php:95
+msgid "Referrer and Referee emails are identical (%s)"
+msgstr ""
+
+#: ../app/class-core.php:152
+msgid "Settings"
+msgstr ""
+
+#: ../app/class-referral-code-manager.php:485
+msgid "Fixed Amount"
+msgstr ""
+
+#: ../app/class-referral-code-manager.php:486
+msgid "Order Total Percentage"
+msgstr ""
+
+#: ../app/class-referrer-meta.php:43, ../app/class-shortcodes.php:104
+msgid "Referrer Details"
+msgstr ""
+
+#: ../app/class-referrer-meta.php:110, ../app/class-referrer-meta.php:110
+msgid "Save"
+msgstr ""
+
+#: ../app/class-referrer-meta.php:131
+msgid "Payment Details"
+msgstr ""
+
+#: ../app/class-referrer-meta.php:132
+msgid "Add any type of detail you would like to use to receive payments, e.g. Paypal Email, IBAN, Bank Name..."
+msgstr ""
+
+#: ../app/class-referrer-meta.php:136
+msgid "Personal ID (or passport number)"
+msgstr ""
+
+#: ../app/class-referrer-meta.php:137
+msgid "Personal ID"
+msgstr ""
+
+#: ../app/class-referrer-meta.php:141
+msgid "Company Name"
+msgstr ""
+
+#: ../app/class-referrer-meta.php:145
+msgid "Company business registration number (or VAT ID)"
+msgstr ""
+
+#: ../app/class-referrer-meta.php:146
+msgid "Company business registration number"
+msgstr ""
+
+#: ../app/class-sharer.php:43
+msgid "Share"
+msgstr ""
+
+#: ../app/class-shortcodes.php:102, ../app/admin/class-admin-settings-general.php:77, ../app/referral/class-referral-cpt.php:281, ../app/referral/class-referral-cpt.php:283, ../app/referral/class-referral-cpt.php:290
+msgid "Referrals"
+msgstr ""
+
+#: ../app/class-shortcodes.php:103, ../app/admin/class-admin-settings-general.php:114
+msgid "Referral Codes"
+msgstr ""
+
+#: ../app/class-shortcodes.php:241, ../app/class-shortcodes.php:399
+msgid "Code"
+msgstr ""
+
+#: ../app/class-shortcodes.php:242
+msgid "Reward"
+msgstr ""
+
+#: ../app/class-shortcodes.php:243, ../app/referral/class-referral-meta.php:109
+msgid "Order"
+msgstr ""
+
+#: ../app/class-shortcodes.php:244
+msgid "Status"
+msgstr ""
+
+#: ../app/class-shortcodes.php:245, ../app/admin/class-admin-settings.php:125
+msgid "Authenticity"
+msgstr ""
+
+#: ../app/class-shortcodes.php:246
+msgid "Date"
+msgstr ""
+
+#: ../app/class-shortcodes.php:400
+msgid "Referral Code URL"
+msgstr ""
+
+#: ../app/class-shortcodes.php:401
+msgid "Copy"
+msgstr ""
+
+#: ../app/admin/class-admin-notices.php:63
+msgid "Easy Referral for WooCommerce - Feedback"
+msgstr ""
+
+#: ../app/admin/class-admin-notices.php:77
+msgid "Easy Referral for WooCommerce - Pro"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-authenticity.php:58, ../app/admin/class-admin-settings-authenticity.php:59, ../app/admin/class-admin-settings-interface.php:74, ../app/admin/class-referral-code-admin-settings.php:44, ../app/admin/class-referral-code-admin-settings.php:45
+msgid "Enable"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-authenticity.php:68
+msgid "Once the possible fraud is detected this is how it's going to be displayed."
+msgstr ""
+
+#: ../app/admin/class-admin-settings-authenticity.php:70
+msgid "Checking Result"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-authenticity.php:100
+msgid "Referral Authenticity"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-authenticity.php:102
+msgid "This section provides options that will try to check Referrals Authenticity."
+msgstr ""
+
+#: ../app/admin/class-admin-settings-authenticity.php:112
+msgid "Authenticity Status"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-authenticity.php:114
+msgid "How Referrals will be set according to Authenticity Checking."
+msgstr ""
+
+#: ../app/admin/class-admin-settings-authenticity.php:114
+msgid "If an Authenticity Checking detects some possible fraud, the correspondent Referral will be set as not Reliable."
+msgstr ""
+
+#: ../app/admin/class-admin-settings-authenticity.php:115
+msgid "You can edit the statuses as you want accessing <a href=\"%s\">Referrals > Authenticity</a>"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-authenticity.php:127
+msgid "When a Referral is considered Reliable"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-authenticity.php:128
+msgid "Reliable Status"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-authenticity.php:136
+msgid "When a Referral is not considered Reliable"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-authenticity.php:137
+msgid "Not Reliable Status"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-authenticity.php:146
+msgid "Authenticity Checking"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-authenticity.php:148
+msgid "Fraud detection mechanisms that will try to check if a Referral is reliable."
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:60, ../app/admin/class-admin-settings-general.php:69
+msgid "Easy Referral for WooCommerce"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:62
+msgid "General Options."
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:68
+msgid "Enable Plugin"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:69
+msgid "Enable %s plugin"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:79
+msgid "Referrals are the proof that a Referee visited a URL shared by a Referrer and has made a purchase."
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:79
+msgid "The Shop Owner can view all the global Referrals accessing <a href=\"%s\">Referrals</a>."
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:79
+msgid "Referrers can see their own Referrals on <a href=\"%s\">My Account > Referral > Referrals</a>."
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:87
+msgid "The status an order needs to change to in order to create the Referral."
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:88
+msgid "Referral Creation Order Status"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:96
+msgid "The default status of a Referral after it has been created."
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:98
+msgid "You can edit the statuses as you want accessing <a href=\"%s\">Referrals > Status</a>"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:105
+msgid "Defaut Referral Status"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:116
+msgid "Referral Codes are unique per user and will be displayed on <a href='%s'>My Account > Referral > Referral Codes</a>."
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:116
+msgid "They will be used by Referrers to create a URL that once shared and visited will generate a Referral if the Referee makes a purchase."
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:123
+msgid "URL Param"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:124
+msgid "The parameter responsible for generating the Referral URL."
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:131
+msgid "A random string used to create the Referral Codes. If you change it the Referral Codes will also change!"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:133
+msgid "Encryption Salt"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:142
+msgid "Referral Codes Amount"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:143
+msgid "The total amount of Referral Codes."
+msgstr ""
+
+#: ../app/admin/class-admin-settings-interface.php:46, ../app/admin/class-admin-settings.php:126
+msgid "Interface"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-interface.php:48
+msgid "Options regarding User Interface."
+msgstr ""
+
+#: ../app/admin/class-admin-settings-interface.php:56
+msgid "Frontend"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-interface.php:58
+msgid "User Interface options that will be displayed on the Frontend"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-interface.php:64
+msgid "Codes on the Dashboard"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-interface.php:65
+msgid "Show"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-interface.php:66
+msgid "Display Referral Codes on My Account > Dashboard"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-interface.php:73
+msgid "Period Filter"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-interface.php:75
+msgid "Allows to filter Referrals by period (current month and previous month for now)"
+msgstr ""
+
+#: ../app/admin/class-admin-settings.php:30, ../app/my-account/class-referral-tab.php:258, ../app/my-account/class-referral-tab.php:311, ../app/referral/class-referral-cpt.php:282, ../app/referral/class-referral-cpt.php:284
+msgid "Referral"
+msgstr ""
+
+#: ../app/admin/class-admin-settings.php:53
+msgid "Disabled options can be unlocked using the <a href=\"%s\" target=\"_blank\">Pro version</a>"
+msgstr ""
+
+#: ../app/admin/class-admin-settings.php:124
+msgid "General"
+msgstr ""
+
+#: ../app/admin/class-referral-code-admin-settings.php:52
+msgid "Reward Type"
+msgstr ""
+
+#: ../app/admin/class-referral-code-admin-settings.php:53
+msgid "The method the Referrer will be rewarded."
+msgstr ""
+
+#: ../app/admin/class-referral-code-admin-settings.php:61, ../app/referral/class-referral-meta.php:126
+msgid "Reward Value"
+msgstr ""
+
+#: ../app/admin/class-referral-code-admin-settings.php:62
+msgid "Rewards the Referrer based on the Reward Type option."
+msgstr ""
+
+#: ../app/admin/class-referral-code-admin-settings.php:67
+msgid "Usage Limit per Referee"
+msgstr ""
+
+#: ../app/admin/class-referral-code-admin-settings.php:68
+msgid "How many times this Referral Code can be used by the same Referee. Zero or empty allows unlimited usage."
+msgstr ""
+
+#: ../app/admin/class-referral-code-admin-settings.php:68
+msgid "Uses billing email for guests, and user ID for logged in users."
+msgstr ""
+
+#: ../app/admin/class-referral-code-admin-settings.php:74
+msgid "Apply Coupon Code"
+msgstr ""
+
+#: ../app/admin/class-referral-code-admin-settings.php:75
+msgid "Applies the Coupon Code when the Referral URL is visited, giving a discount to the Referee."
+msgstr ""
+
+#: ../app/my-account/class-dashboard-tab.php:41
+msgid "Your Referral Codes"
+msgstr ""
+
+#: ../app/referral/class-referral-authenticity-tax.php:116
+msgid "Apparently Reliable"
+msgstr ""
+
+#: ../app/referral/class-referral-authenticity-tax.php:117
+msgid "When the Authenticity Checking can't detect anything wrong with a Referral"
+msgstr ""
+
+#: ../app/referral/class-referral-authenticity-tax.php:121
+msgid "Possible Fraud"
+msgstr ""
+
+#: ../app/referral/class-referral-authenticity-tax.php:122
+msgid "When the Authenticity Checking detects something wrong with a Referral"
+msgstr ""
+
+#: ../app/referral/class-referral-authenticity-tax.php:126
+msgid "Fraud Alert"
+msgstr ""
+
+#: ../app/referral/class-referral-checking-tax.php:99
+msgid "Identical Emails"
+msgstr ""
+
+#: ../app/referral/class-referral-checking-tax.php:100
+msgid "When Referrer and Referee emails are identical"
+msgstr ""
+
+#: ../app/referral/class-referral-cpt.php:53
+msgid "It seems that you don't have any Referrals yet. Please try to share your <a href=\"%s\">Referral Code URL</a> with your friends."
+msgstr ""
+
+#: ../app/referral/class-referral-cpt.php:61
+msgid "If they visit the URL and make a purchase you'll have your first Referral."
+msgstr ""
+
+#: ../app/referral/class-referral-cpt.php:285
+msgid "Add New"
+msgstr ""
+
+#: ../app/referral/class-referral-cpt.php:286
+msgid "Add New Referral"
+msgstr ""
+
+#: ../app/referral/class-referral-cpt.php:287
+msgid "New Referral"
+msgstr ""
+
+#: ../app/referral/class-referral-cpt.php:288
+msgid "Edit Referral"
+msgstr ""
+
+#: ../app/referral/class-referral-cpt.php:289
+msgid "View Referral"
+msgstr ""
+
+#: ../app/referral/class-referral-cpt.php:291
+msgid "Search Referrals"
+msgstr ""
+
+#: ../app/referral/class-referral-cpt.php:292
+msgid "Parent Referrals:"
+msgstr ""
+
+#: ../app/referral/class-referral-cpt.php:293
+msgid "No Referrals found."
+msgstr ""
+
+#: ../app/referral/class-referral-cpt.php:294
+msgid "No Referrals found in Trash."
+msgstr ""
+
+#: ../app/referral/class-referral-cpt.php:299
+msgid "Description."
+msgstr ""
+
+#: ../app/referral/class-referral-email.php:75
+msgid "You have a new Referral."
+msgstr ""
+
+#: ../app/referral/class-referral-email.php:76
+msgid "[Referral #%s]"
+msgstr ""
+
+#: ../app/referral/class-referral-email.php:79
+msgid "Please access your <a href=\"%s\">Referrals page</a> to see more details."
+msgstr ""
+
+#: ../app/referral/class-referral-email.php:80
+msgid "You Have a new Referral"
+msgstr ""
+
+#: ../app/referral/class-referral-meta.php:40
+msgid "Authenticity Checking Result"
+msgstr ""
+
+#: ../app/referral/class-referral-meta.php:46
+msgid "Authenticity Checking Results"
+msgstr ""
+
+#: ../app/referral/class-referral-meta.php:84
+msgid "Info"
+msgstr ""
+
+#: ../app/referral/class-referral-meta.php:89
+msgid "Referrer"
+msgstr ""
+
+#: ../app/referral/class-referral-meta.php:99
+msgid "Referrer Code"
+msgstr ""
+
+#: ../app/referral/class-referral-meta.php:110
+msgid "Related Order ID that created this Referral"
+msgstr ""
+
+#: ../app/referral/class-referral-meta.php:119
+msgid "Reward type"
+msgstr ""
+
+#: ../app/referral/class-referral-meta.php:127
+msgid "Reward Value based on Reward Type"
+msgstr ""
+
+#: ../app/referral/class-referral-meta.php:134
+msgid "Total Reward Value"
+msgstr ""
+
+#: ../app/referral/class-referral-meta.php:135
+msgid "Total Reward Value considering the reward type and after the calculations have been made."
+msgstr ""
+
+#: ../app/referral/class-referral-status-tax.php:106
+msgid "Unpaid"
+msgstr ""
+
+#: ../app/referral/class-referral-status-tax.php:107
+msgid "When a Referral has not been paid yet."
+msgstr ""
+
+#: ../app/referral/class-referral-status-tax.php:111
+msgid "Paid"
+msgstr ""
+
+#: ../app/referral/class-referral-status-tax.php:112
+msgid "After a Referral has been paid."
+msgstr ""
+
+#: ../app/referral/class-referral-status-tax.php:116
+msgid "Rejected"
+msgstr ""
+
+#: ../app/referral/class-referral-status-tax.php:117
+msgid "When a Referral is not going to be paid for being considered a fraud or for any other reasons"
+msgstr ""

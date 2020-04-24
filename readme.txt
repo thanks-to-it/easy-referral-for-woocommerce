@@ -2,7 +2,7 @@
 Contributors: karzin
 Tags: referral,affiliate,referee,referrer,woocommerce
 Requires at least: 4.4
-Tested up to: 5.2
+Tested up to: 5.4
 Stable tag: 1.0.5
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
@@ -64,6 +64,12 @@ If you are interested in contributing - head over to the [Referral System for Wo
 
 == Changelog ==
 
+= 1.0.6 - 24/04/2020 =
+* Refactor
+* WC tested up to: 4.0
+* WP Tested up to: 5.4
+* Add 'Referral Code as Coupon' option on pro version
+
 = 1.0.5 - 14/11/2019 =
 * Add url icon on Referral Codes table
 * Add a button to copy the Referral Code URL to the clipboard
@@ -92,7 +98,8 @@ If you are interested in contributing - head over to the [Referral System for Wo
 
 == Upgrade Notice ==
 
-= 1.0.5 =
-* Add url icon on Referral Codes table
-* Add a button to copy the Referral Code URL to the clipboard
-* Add option to display the Referral Codes table on My Account > Dashboard
+= 1.0.6 =
+* Refactor
+* WC tested up to: 4.0
+* WP Tested up to: 5.4
+* Add 'Referral Code as Coupon' option on pro version
