@@ -65,7 +65,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Core' ) ) {
 				$this->factory->get_sharer()->init();
 
 				// Scripts
-				//$this->factory->get_scripts()->init();
+				$this->factory->get_scripts()->init();
 
 				/*$container = new DI_Container();
 				$container['test'] = function(){
