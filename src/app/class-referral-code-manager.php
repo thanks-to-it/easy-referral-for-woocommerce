@@ -471,13 +471,18 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral_Code_Manager' ) ) {
 			if ( empty( $referrer_code ) ) {
 				return;
 			}
-
 			$decoded = $this->decode_referrer_code( $referrer_code );
-			if ( ! empty( $decoded ) ) {
+			$code    = $this->get_referral_code( $decoded['referral_code_id'] );
+			if (
+				empty( $decoded ) ||
+				empty( $code ) ||
+				! $code->enabled ||
+				! apply_filters( 'erwc_apply_referral_code_validation', true, $referrer_code, array() )
+			) {
+				$this->remove_referrer_code_from_wc_session();
+			} else {
 				ERWC()->factory->get_session()->set_session_var( 'erwc_referrer_code', $referrer_code );
 				do_action( 'erwc_referrer_code_detected', $referrer_code );
-			} else {
-				$this->remove_referrer_code_from_wc_session();
 			}
 		}
 
