@@ -147,10 +147,10 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 				array(
 					'type'              => 'checkbox',
 					'disable'           => apply_filters( 'erwc_is_free_version', true ),
-					'id'                => 'erwc_opt_referral_as_coupon_enabled',
-					'name'              => __( 'Referral Code as Coupon', 'easy-referral-for-woocommerce' ),
+					'id'                => 'erwc_opt_apply_code_manually',
+					'name'              => __( 'Apply Manually', 'easy-referral-for-woocommerce' ),
 					'desc'              => __( 'Enable', 'easy-referral-for-woocommerce' ),
-					'desc_tip'          => __( 'Allows a Referral Code to be used as a Coupon', 'easy-referral-for-woocommerce' ),
+					'desc_tip'          => __( 'Instead of accessing a referral link, a Referee can also apply the Referral Code manually.', 'easy-referral-for-woocommerce' ),
 					'default'           => 'no',
 				),
 				array(

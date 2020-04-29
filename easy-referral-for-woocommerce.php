@@ -40,7 +40,6 @@ if ( ! function_exists( 'ERWC' ) ) {
 		return \ThanksToIT\ERWC\Core::get_instance();
 	}
 }
-
 $plugin = ERWC();
 $plugin->setup( array(
 	'version'         => '1.0.6-dev',
