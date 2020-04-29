@@ -44,7 +44,6 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral_Code_Manager' ) ) {
 			// Check if Referrer code is from current user
 			add_filter( 'erwc_apply_referral_code_validation', array( $this, 'disallow_referral_from_own_user' ), 10, 3 );
 
-			
 
 			/*add_action('init',function(){
 				$order = wc_get_order(296);
@@ -206,7 +205,6 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral_Code_Manager' ) ) {
 			<?php
 		}
 
-		
 
 		/**
 		 * apply_referral_code_on_order.
@@ -298,7 +296,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral_Code_Manager' ) ) {
 		 */
 		function get_referral_code( $code_id ) {
 			$codes = $this->get_referral_codes();
-			return $codes[ $code_id ];
+			return isset( $codes[ $code_id ] ) ? $codes[ $code_id ] : false;
 		}
 
 		/**
@@ -470,8 +468,13 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral_Code_Manager' ) ) {
 				return;
 			}
 
-			ERWC()->factory->get_session()->set_session_var( 'erwc_referrer_code', $referrer_code );
-			do_action( 'erwc_referrer_code_detected', $referrer_code );
+			$decoded = $this->decode_referrer_code( $referrer_code );
+			if ( ! empty( $decoded ) ) {
+				ERWC()->factory->get_session()->set_session_var( 'erwc_referrer_code', $referrer_code );
+				do_action( 'erwc_referrer_code_detected', $referrer_code );
+			} else {
+				$this->remove_referrer_code_from_wc_session();
+			}
 		}
 
 		/**
@@ -482,7 +485,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral_Code_Manager' ) ) {
 		 */
 		function get_reward_types() {
 			return array(
-				'fixed_amount' => __( 'Fixed Amount', 'easy-referral-for-woocommerce' ),
+				'fixed_amount'           => __( 'Fixed Amount', 'easy-referral-for-woocommerce' ),
 				'order_total_percentage' => __( 'Order Total Percentage', 'easy-referral-for-woocommerce' ),
 			);
 		}
