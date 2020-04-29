@@ -61,11 +61,10 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral_Code_Manager' ) ) {
 		 *
 		 * @param $valid
 		 * @param $referrer_code
-		 * @param $order
 		 *
 		 * @return bool
 		 */
-		function disallow_referral_from_own_user( $valid, $referrer_code, $order ) {
+		function disallow_referral_from_own_user( $valid, $referrer_code, $args ) {
 			$decoded = $this->decode_referrer_code( $referrer_code );
 			if (
 				! is_user_logged_in() ||
@@ -106,8 +105,13 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral_Code_Manager' ) ) {
 		 *
 		 * @return boolean
 		 */
-		function validate_referrer_code_by_referrer_usage_limit( $valid, $referrer_code, $order ) {
+		function validate_referrer_code_by_referrer_usage_limit( $valid, $referrer_code, $args ) {
 			global $wpdb;
+			if ( isset( $args['order'] ) ) {
+				$order = $args['order'];
+			} else {
+				return $valid;
+			}
 			$billing_email        = $order->get_billing_email();
 			$user_id              = $order->get_customer_id();
 			$decoded              = $this->decode_referrer_code( $referrer_code );
@@ -226,7 +230,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral_Code_Manager' ) ) {
 			$code    = $this->get_referral_code( $decoded['referral_code_id'] );
 			if (
 				! $code->enabled ||
-				! apply_filters( 'erwc_apply_referral_code_validation', true, $referrer_code, $order )
+				! apply_filters( 'erwc_apply_referral_code_validation', true, $referrer_code, array( 'order' => $order ) )
 			) {
 				return;
 			}
