@@ -1,4 +1,4 @@
-# Copyright (C) 2019 easy-referral-for-woocommerce
+# Copyright (C) 2020 easy-referral-for-woocommerce
 # This file is distributed under the same license as the easy-referral-for-woocommerce package.
 msgid ""
 msgstr ""
@@ -41,15 +41,15 @@ msgstr ""
 msgid "Referrer and Referee emails are identical (%s)"
 msgstr ""
 
-#: ../app/class-core.php:152
+#: ../app/class-core.php:169
 msgid "Settings"
 msgstr ""
 
-#: ../app/class-referral-code-manager.php:485
+#: ../app/class-referral-code-manager.php:497
 msgid "Fixed Amount"
 msgstr ""
 
-#: ../app/class-referral-code-manager.php:486
+#: ../app/class-referral-code-manager.php:498
 msgid "Order Total Percentage"
 msgstr ""
 
@@ -93,11 +93,11 @@ msgstr ""
 msgid "Share"
 msgstr ""
 
-#: ../app/class-shortcodes.php:102, ../app/admin/class-admin-settings-general.php:77, ../app/referral/class-referral-cpt.php:281, ../app/referral/class-referral-cpt.php:283, ../app/referral/class-referral-cpt.php:290
+#: ../app/class-shortcodes.php:102, ../app/referral/class-referral-cpt.php:281, ../app/referral/class-referral-cpt.php:283, ../app/referral/class-referral-cpt.php:290
 msgid "Referrals"
 msgstr ""
 
-#: ../app/class-shortcodes.php:103, ../app/admin/class-admin-settings-general.php:114
+#: ../app/class-shortcodes.php:103, ../app/admin/class-admin-settings-general.php:174
 msgid "Referral Codes"
 msgstr ""
 
@@ -113,7 +113,7 @@ msgstr ""
 msgid "Order"
 msgstr ""
 
-#: ../app/class-shortcodes.php:244
+#: ../app/class-shortcodes.php:244, ../app/admin/class-admin-settings-general.php:138
 msgid "Status"
 msgstr ""
 
@@ -141,7 +141,7 @@ msgstr ""
 msgid "Easy Referral for WooCommerce - Pro"
 msgstr ""
 
-#: ../app/admin/class-admin-settings-authenticity.php:58, ../app/admin/class-admin-settings-authenticity.php:59, ../app/admin/class-admin-settings-interface.php:74, ../app/admin/class-referral-code-admin-settings.php:44, ../app/admin/class-referral-code-admin-settings.php:45
+#: ../app/admin/class-admin-settings-authenticity.php:58, ../app/admin/class-admin-settings-authenticity.php:59, ../app/admin/class-admin-settings-general.php:100, ../app/admin/class-admin-settings-general.php:104, ../app/admin/class-admin-settings-interface.php:74, ../app/admin/class-referral-code-admin-settings.php:44, ../app/admin/class-referral-code-admin-settings.php:45
 msgid "Enable"
 msgstr ""
 
@@ -201,15 +201,15 @@ msgstr ""
 msgid "Fraud detection mechanisms that will try to check if a Referral is reliable."
 msgstr ""
 
-#: ../app/admin/class-admin-settings-general.php:60, ../app/admin/class-admin-settings-general.php:69
-msgid "Easy Referral for WooCommerce"
+#: ../app/admin/class-admin-settings-general.php:60, ../app/admin/class-admin-settings.php:124
+msgid "General"
 msgstr ""
 
 #: ../app/admin/class-admin-settings-general.php:62
-msgid "General Options."
+msgid "General Options from Easy Referral for WooCommerce plugin."
 msgstr ""
 
-#: ../app/admin/class-admin-settings-general.php:68
+#: ../app/admin/class-admin-settings-general.php:66
 msgid "Enable Plugin"
 msgstr ""
 
@@ -217,67 +217,83 @@ msgstr ""
 msgid "Enable %s plugin"
 msgstr ""
 
-#: ../app/admin/class-admin-settings-general.php:79
-msgid "Referrals are the proof that a Referee visited a URL shared by a Referrer and has made a purchase."
+#: ../app/admin/class-admin-settings-general.php:69
+msgid "Easy Referral for WooCommerce"
 msgstr ""
 
-#: ../app/admin/class-admin-settings-general.php:79
-msgid "The Shop Owner can view all the global Referrals accessing <a href=\"%s\">Referrals</a>."
-msgstr ""
-
-#: ../app/admin/class-admin-settings-general.php:79
-msgid "Referrers can see their own Referrals on <a href=\"%s\">My Account > Referral > Referrals</a>."
-msgstr ""
-
-#: ../app/admin/class-admin-settings-general.php:87
-msgid "The status an order needs to change to in order to create the Referral."
-msgstr ""
-
-#: ../app/admin/class-admin-settings-general.php:88
-msgid "Referral Creation Order Status"
-msgstr ""
-
-#: ../app/admin/class-admin-settings-general.php:96
-msgid "The default status of a Referral after it has been created."
-msgstr ""
-
-#: ../app/admin/class-admin-settings-general.php:98
-msgid "You can edit the statuses as you want accessing <a href=\"%s\">Referrals > Status</a>"
-msgstr ""
-
-#: ../app/admin/class-admin-settings-general.php:105
-msgid "Defaut Referral Status"
-msgstr ""
-
-#: ../app/admin/class-admin-settings-general.php:116
-msgid "Referral Codes are unique per user and will be displayed on <a href='%s'>My Account > Referral > Referral Codes</a>."
-msgstr ""
-
-#: ../app/admin/class-admin-settings-general.php:116
-msgid "They will be used by Referrers to create a URL that once shared and visited will generate a Referral if the Referee makes a purchase."
-msgstr ""
-
-#: ../app/admin/class-admin-settings-general.php:123
-msgid "URL Param"
-msgstr ""
-
-#: ../app/admin/class-admin-settings-general.php:124
-msgid "The parameter responsible for generating the Referral URL."
-msgstr ""
-
-#: ../app/admin/class-admin-settings-general.php:131
-msgid "A random string used to create the Referral Codes. If you change it the Referral Codes will also change!"
-msgstr ""
-
-#: ../app/admin/class-admin-settings-general.php:133
+#: ../app/admin/class-admin-settings-general.php:73
 msgid "Encryption Salt"
 msgstr ""
 
-#: ../app/admin/class-admin-settings-general.php:142
-msgid "Referral Codes Amount"
+#: ../app/admin/class-admin-settings-general.php:76
+msgid "A random string used to create the Referral Codes. If you change it the Referral Codes will also change!"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:81
+msgid "URL Param"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:85
+msgid "The parameter responsible for generating the Referral URL."
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:94
+msgid "Apply Manually"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:96
+msgid "Instead of accessing a referral link, a Referee can also apply the Referral Code manually."
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:108
+msgid "Cart Position"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:111
+msgid "The action hook used to position the Referral Code field on the cart page."
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:116
+msgid "Checkout Position"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:119
+msgid "The action hook used to position the Referral Code field on the checkout page."
 msgstr ""
 
 #: ../app/admin/class-admin-settings-general.php:143
+msgid "Referral Creation Order Status"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:148
+msgid "The status an order needs to change to in order to create the Referral."
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:153
+msgid "Defaut Referral Status"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:157
+msgid "The default status of a Referral after it has been created."
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:159
+msgid "You can edit the statuses as you want accessing <a href=\"%s\">Referrals > Status</a>"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:176
+msgid "Referral Codes are unique per user and will be displayed on <a href='%s'>My Account > Referral > Referral Codes</a>."
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:176
+msgid "They will be used by Referrers to create a URL that once shared and visited will generate a Referral if the Referee makes a purchase."
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:180
+msgid "Referral Codes Amount"
+msgstr ""
+
+#: ../app/admin/class-admin-settings-general.php:186
 msgid "The total amount of Referral Codes."
 msgstr ""
 
@@ -317,16 +333,12 @@ msgstr ""
 msgid "Allows to filter Referrals by period (current month and previous month for now)"
 msgstr ""
 
-#: ../app/admin/class-admin-settings.php:30, ../app/my-account/class-referral-tab.php:258, ../app/my-account/class-referral-tab.php:311, ../app/referral/class-referral-cpt.php:282, ../app/referral/class-referral-cpt.php:284
+#: ../app/admin/class-admin-settings.php:30, ../app/my-account/class-referral-tab.php:219, ../app/my-account/class-referral-tab.php:272, ../app/referral/class-referral-cpt.php:282, ../app/referral/class-referral-cpt.php:284
 msgid "Referral"
 msgstr ""
 
 #: ../app/admin/class-admin-settings.php:53
 msgid "Disabled options can be unlocked using the <a href=\"%s\" target=\"_blank\">Pro version</a>"
-msgstr ""
-
-#: ../app/admin/class-admin-settings.php:124
-msgid "General"
 msgstr ""
 
 #: ../app/admin/class-referral-code-admin-settings.php:52
