@@ -68,7 +68,9 @@ If you are interested in contributing - head over to the [Referral System for Wo
 * Refactor
 * WC tested up to: 4.0
 * WP Tested up to: 5.4
-* Add 'Referral Code as Coupon' option on pro version
+* Add 'Apply Referral Code manually' option on pro version
+* Add Cart Position option from Apply Code Manually
+* Add Checkout Position option from Apply Code Manually
 
 = 1.0.5 - 14/11/2019 =
 * Add url icon on Referral Codes table
@@ -102,4 +104,6 @@ If you are interested in contributing - head over to the [Referral System for Wo
 * Refactor
 * WC tested up to: 4.0
 * WP Tested up to: 5.4
-* Add 'Referral Code as Coupon' option on pro version
+* Add 'Apply Referral Code manually' option on pro version
+* Add Cart Position option from Apply Code Manually
+* Add Checkout Position option from Apply Code Manually
