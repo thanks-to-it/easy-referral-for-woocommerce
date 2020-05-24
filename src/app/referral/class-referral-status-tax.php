@@ -51,6 +51,23 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Status_Tax' ) ) {
 		}
 
 		/**
+		 * get_probably_paid_status_id.
+		 *
+		 * @version 1.0.0
+		 * @since   1.0.0
+		 *
+		 * @return string
+		 */
+		function get_probably_paid_status_id() {
+			$automatically_created_status = get_option( 'erwc_referral_status_terms', array() );
+			if ( count( $automatically_created_status ) > 0 ) {
+				return $automatically_created_status[1];
+			} else {
+				return '';
+			}
+		}
+
+		/**
 		 * create_terms_on_plugin_init.
 		 *
 		 * @version 1.0.0

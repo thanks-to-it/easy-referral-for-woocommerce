@@ -87,6 +87,33 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 					'default'  => ERWC()->factory->get_referral_code_manager()->get_referral_url_param(),
 				),
 				array(
+					'name'     => __( 'Defaut Referral Status', 'easy-referral-for-woocommerce' ),
+					'type'     => 'select',
+					'class'    => 'wc-enhanced-select',
+					'id'       => 'erwc_opt_referral_status',
+					'desc_tip' => __( 'The default status of a Referral after it has been created.', 'easy-referral-for-woocommerce' ),
+					'desc'     => sprintf(
+						__( 'You can edit the statuses as you want accessing <a href="%s">Referrals > Status</a>', 'easy-referral-for-woocommerce' ),
+						add_query_arg( array(
+							'taxonomy'  => ERWC()->factory->get_referral_status_tax()->tax_id,
+							'post_type' => ERWC()->factory->get_referral_cpt()->cpt_id
+						), admin_url( 'edit-tags.php' ) )
+					),
+					//'custom_attributes' => array( 'readonly' => 'readonly' ),
+					'options'  => ERWC()->factory->get_referral_status_tax()->get_registered_terms( array( 'get_only' => 'id_and_title' ) ),
+					'default'  => ERWC()->factory->get_referral_status_tax()->get_probably_unpaid_status_id(),
+				),
+				array(
+					'name'     => __( 'Referral Creation Order Status', 'easy-referral-for-woocommerce' ),
+					'type'     => 'multiselect',
+					'class'    => 'wc-enhanced-select',
+					'disable'  => apply_filters( 'erwc_is_free_version', true ),
+					'id'       => 'erwc_opt_referral_creation_order_status',
+					'desc_tip' => __( 'The status an order needs to change to in order to create the Referral.', 'easy-referral-for-woocommerce' ),
+					'options'  => wc_get_order_statuses(),
+					'default'  => array('wc-completed')
+				),
+				array(
 					'type' => 'sectionend',
 					'id'   => 'erwc_section_general'
 				),
@@ -134,41 +161,44 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 					'type' => 'sectionend',
 					'id'   => 'erwc_section_referrals'
 				),*/
+
+
+
 				array(
-					'name' => __( 'Status', 'easy-referral-for-woocommerce' ),
+					'name' => __( 'Rewards as Discount', 'easy-referral-for-woocommerce' ),
 					'type' => 'title',
-					'id'   => 'erwc_section_status',
+					'desc' => __( 'Rewards from Referrals can be applied as discounts to Referrers on their next purchases.', 'easy-referral-for-woocommerce' ),
+					'id'   => 'erwc_section_rewards_as_discount',
 				),
 				array(
-					'name'     => __( 'Referral Creation Order Status', 'easy-referral-for-woocommerce' ),
-					'type'     => 'multiselect',
-					'class'    => 'wc-enhanced-select',
+					'name'    => __( 'Enable', 'easy-referral-for-woocommerce' ),
+					'type'    => 'checkbox',
 					'disable'  => apply_filters( 'erwc_is_free_version', true ),
-					'id'       => 'erwc_opt_referral_creation_order_status',
-					'desc_tip' => __( 'The status an order needs to change to in order to create the Referral.', 'easy-referral-for-woocommerce' ),
-					'options'  => wc_get_order_statuses(),
-					'default'  => array('wc-completed')
+					'id'      => 'erwc_opt_rewards_as_discount_enable',
+					'desc'    => __( 'Enable', 'easy-referral-for-woocommerce' ),
+					'default' => 'no',
 				),
 				array(
-					'name'     => __( 'Defaut Referral Status', 'easy-referral-for-woocommerce' ),
+					'name'     => __( 'Available Status', 'easy-referral-for-woocommerce' ),
 					'type'     => 'select',
-					'class'    => 'wc-enhanced-select',
-					'id'       => 'erwc_opt_referral_status',
-					'desc_tip' => __( 'The default status of a Referral after it has been created.', 'easy-referral-for-woocommerce' ),
-					'desc'     => sprintf(
-						__( 'You can edit the statuses as you want accessing <a href="%s">Referrals > Status</a>', 'easy-referral-for-woocommerce' ),
-						add_query_arg( array(
-							'taxonomy'  => ERWC()->factory->get_referral_status_tax()->tax_id,
-							'post_type' => ERWC()->factory->get_referral_cpt()->cpt_id
-						), admin_url( 'edit-tags.php' ) )
-					),
-					//'custom_attributes' => array( 'readonly' => 'readonly' ),
+					'disable'  => apply_filters( 'erwc_is_free_version', true ),
+					'id'       => 'erwc_opt_rewards_as_discount_available_status',
+					'desc_tip' => __( 'Status that will be used to consider a Referral Reward available for discount.', 'easy-referral-for-woocommerce' ),
 					'options'  => ERWC()->factory->get_referral_status_tax()->get_registered_terms( array( 'get_only' => 'id_and_title' ) ),
 					'default'  => ERWC()->factory->get_referral_status_tax()->get_probably_unpaid_status_id(),
 				),
 				array(
+					'name'     => __( 'Unavailable Status', 'easy-referral-for-woocommerce' ),
+					'type'     => 'select',
+					'disable'  => apply_filters( 'erwc_is_free_version', true ),
+					'id'       => 'erwc_opt_rewards_as_discount_unavailable_status',
+					'desc_tip' => __( 'Status that will be used to consider a Referral Reward unavailable for discount. The Referral will also change to this status after the discount has been applied.', 'easy-referral-for-woocommerce' ),
+					'options'  => ERWC()->factory->get_referral_status_tax()->get_registered_terms( array( 'get_only' => 'id_and_title' ) ),
+					'default'  => ERWC()->factory->get_referral_status_tax()->get_probably_paid_status_id(),
+				),
+				array(
 					'type' => 'sectionend',
-					'id'   => 'erwc_section_status'
+					'id'   => 'erwc_section_rewards_as_discount'
 				),
 				array(
 					'name' => __( 'Referral Codes', 'easy-referral-for-woocommerce' ),
