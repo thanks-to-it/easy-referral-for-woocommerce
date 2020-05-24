@@ -188,6 +188,15 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 					'default'  => ERWC()->factory->get_referral_status_tax()->get_probably_unpaid_status_id(),
 				),
 				array(
+					'name'     => __( 'Authenticity Available Status', 'easy-referral-for-woocommerce' ),
+					'type'     => 'select',
+					'disable'  => apply_filters( 'erwc_is_free_version', true ),
+					'id'       => 'erwc_opt_rewards_as_discount_auth_available_status',
+					'desc_tip' => __( 'Authencitiy Status that will be used to consider a Referral Reward available for discount.', 'easy-referral-for-woocommerce' ),
+					'options'  => ERWC()->factory->get_referral_authenticity_tax()->get_registered_terms(array( 'get_only' => 'id_and_title' )),
+					'default'  => ERWC()->factory->get_referral_authenticity_tax()->get_probably_reliable_status_id()
+				),
+				array(
 					'name'     => __( 'Unavailable Status', 'easy-referral-for-woocommerce' ),
 					'type'     => 'select',
 					'disable'  => apply_filters( 'erwc_is_free_version', true ),
