@@ -141,6 +141,14 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 					'default'     => 'woocommerce_cart_actions',
 				),
 				array(
+					'name'        => __( 'Cart Position Priority', 'easy-referral-for-woocommerce' ),
+					'type'        => 'number',
+					'id'          => 'erwc_opt_apply_code_manually_cart_pos_priority',
+					'desc_tip'    => __( 'The priority used on the action hook to position the Referral Code field on the cart page.', 'easy-referral-for-woocommerce' ),
+					'disable'     => apply_filters( 'erwc_is_free_version', true ),
+					'default'     => 10,
+				),
+				array(
 					'name'        => __( 'Checkout Position', 'easy-referral-for-woocommerce' ),
 					'type'        => 'text',
 					'id'          => 'erwc_opt_apply_code_manually_checkout_pos',
@@ -148,6 +156,14 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 					'disable'     => apply_filters( 'erwc_is_free_version', true ),
 					'placeholder' => 'woocommerce_before_checkout_form',
 					'default'     => 'woocommerce_before_checkout_form',
+				),
+				array(
+					'name'        => __( 'Checkout Position Priority', 'easy-referral-for-woocommerce' ),
+					'type'        => 'number',
+					'id'          => 'erwc_opt_apply_code_manually_checkout_pos_priority',
+					'desc_tip'    => __( 'The priority used on the action hook to position the Referral Code field on the checkout page.', 'easy-referral-for-woocommerce' ),
+					'disable'     => apply_filters( 'erwc_is_free_version', true ),
+					'default'     => 10,
 				),
 				array(
 					'type' => 'sectionend',
@@ -212,7 +228,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 					'type'     => 'text',
 					'disable'  => apply_filters( 'erwc_is_free_version', true ),
 					'id'       => 'erwc_opt_rewards_as_discount_orders_column',
-					'desc_tip' => __( 'Adds a column on the Orders List page displaying discounts.' ).'<br />'.__( 'Leave it empty to disable' ),
+					'desc_tip' => __( 'Adds a column on the Orders List page displaying discounts.' ).'<br />'.__( 'Leave it empty to disable.' ),
 					'options'  => ERWC()->factory->get_referral_status_tax()->get_registered_terms( array( 'get_only' => 'id_and_title' ) ),
 					'placeholder' => __( 'Discount', 'easy-referral-for-woocommerce' ),
 					'default'  => '',
