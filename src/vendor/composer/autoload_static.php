@@ -138,6 +138,7 @@ class ComposerStaticInit4ce61f0c634c5ef18c4a8643395b635d
         'ThanksToIT\\ERWC\\Admin\\Admin_Notices' => __DIR__ . '/../../..' . '/src/app/admin/class-admin-notices.php',
         'ThanksToIT\\ERWC\\Admin\\Admin_Settings' => __DIR__ . '/../../..' . '/src/app/admin/class-admin-settings.php',
         'ThanksToIT\\ERWC\\Admin\\Admin_Settings_Authenticity' => __DIR__ . '/../../..' . '/src/app/admin/class-admin-settings-authenticity.php',
+        'ThanksToIT\\ERWC\\Admin\\Admin_Settings_Codes' => __DIR__ . '/../../..' . '/src/app/admin/class-admin-settings-codes.php',
         'ThanksToIT\\ERWC\\Admin\\Admin_Settings_General' => __DIR__ . '/../../..' . '/src/app/admin/class-admin-settings-general.php',
         'ThanksToIT\\ERWC\\Admin\\Admin_Settings_Interface' => __DIR__ . '/../../..' . '/src/app/admin/class-admin-settings-interface.php',
         'ThanksToIT\\ERWC\\Admin\\Enhanced_Admin_Settings' => __DIR__ . '/../../..' . '/src/app/admin/class-enhanced-admin-settings.php',

@@ -148,6 +148,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Core' ) ) {
 		 */
 		function create_admin_settings( $settings ) {
 			ERWC()->factory->get_admin_settings_authenticity();
+			ERWC()->factory->get_admin_settings_codes();
 			ERWC()->factory->get_admin_settings_interface();
 			ERWC()->factory->get_admin_settings_general()->init();
 			$settings[] = ERWC()->factory->get_instance( 'Admin\Admin_Settings' );

@@ -111,6 +111,7 @@ return array(
     'ThanksToIT\\ERWC\\Admin\\Admin_Notices' => $baseDir . '/src/app/admin/class-admin-notices.php',
     'ThanksToIT\\ERWC\\Admin\\Admin_Settings' => $baseDir . '/src/app/admin/class-admin-settings.php',
     'ThanksToIT\\ERWC\\Admin\\Admin_Settings_Authenticity' => $baseDir . '/src/app/admin/class-admin-settings-authenticity.php',
+    'ThanksToIT\\ERWC\\Admin\\Admin_Settings_Codes' => $baseDir . '/src/app/admin/class-admin-settings-codes.php',
     'ThanksToIT\\ERWC\\Admin\\Admin_Settings_General' => $baseDir . '/src/app/admin/class-admin-settings-general.php',
     'ThanksToIT\\ERWC\\Admin\\Admin_Settings_Interface' => $baseDir . '/src/app/admin/class-admin-settings-interface.php',
     'ThanksToIT\\ERWC\\Admin\\Enhanced_Admin_Settings' => $baseDir . '/src/app/admin/class-enhanced-admin-settings.php',

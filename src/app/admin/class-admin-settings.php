@@ -122,6 +122,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings' ) ) {
 		public function get_sections() {
 			$sections = array(
 				''             => __( 'General', 'easy-referral-for-woocommerce' ),
+				'codes'        => __( 'Codes', 'easy-referral-for-woocommerce' ),
 				'authenticity' => __( 'Authenticity', 'easy-referral-for-woocommerce' ),
 				'interface'    => __( 'Interface', 'easy-referral-for-woocommerce' )
 			);
@@ -144,6 +145,8 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings' ) ) {
 			} elseif ( 'authenticity' === $current_section ) {
 				$settings = apply_filters( "erwc_settings_{$current_section}", array() );
 			} elseif ( 'interface' === $current_section ) {
+				$settings = apply_filters( "erwc_settings_{$current_section}", array() );
+			} elseif ( 'codes' === $current_section ) {
 				$settings = apply_filters( "erwc_settings_{$current_section}", array() );
 			}
 

@@ -10,6 +10,7 @@
 namespace ThanksToIT\ERWC;
 
 use ThanksToIT\ERWC\Admin\Admin_Settings_Authenticity;
+use ThanksToIT\ERWC\Admin\Admin_Settings_Codes;
 use ThanksToIT\ERWC\Admin\Admin_Settings_General;
 use ThanksToIT\ERWC\Admin\Admin_Settings_Interface;
 use ThanksToIT\ERWC\Admin\Referral_Code_Admin_Settings;
@@ -238,6 +239,19 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Factory' ) ) {
 		 */
 		function get_admin_settings_authenticity() {
 			return $this->get_instance( 'Admin\Admin_Settings_Authenticity' );
+		}
+
+		/**
+		 * get_admin_settings_codes.
+		 *
+		 * @version 1.0.6
+		 * @since   1.0.0
+		 *
+		 * @return Admin_Settings_Codes
+		 * @throws \ReflectionException
+		 */
+		function get_admin_settings_codes() {
+			return $this->get_instance( 'Admin\Admin_Settings_Codes' );
 		}
 
 		/**
