@@ -206,6 +206,16 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 					'default'  => ERWC()->factory->get_referral_status_tax()->get_probably_paid_status_id(),
 				),
 				array(
+					'name'     => __( 'Discount Column on Orders', 'easy-referral-for-woocommerce' ),
+					'type'     => 'text',
+					'disable'  => apply_filters( 'erwc_is_free_version', true ),
+					'id'       => 'erwc_opt_rewards_as_discount_orders_column',
+					'desc_tip' => __( 'Adds a column on the Orders List page displaying discounts.' ).'<br />'.__( 'Leave it empty to disable' ),
+					'options'  => ERWC()->factory->get_referral_status_tax()->get_registered_terms( array( 'get_only' => 'id_and_title' ) ),
+					'placeholder' => __( 'Discount', 'easy-referral-for-woocommerce' ),
+					'default'  => '',
+				),
+				array(
 					'type' => 'sectionend',
 					'id'   => 'erwc_section_rewards_as_discount'
 				),
