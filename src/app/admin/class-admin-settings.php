@@ -124,7 +124,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings' ) ) {
 				''             => __( 'General', 'easy-referral-for-woocommerce' ),
 				'codes'        => __( 'Codes', 'easy-referral-for-woocommerce' ),
 				'authenticity' => __( 'Authenticity', 'easy-referral-for-woocommerce' ),
-				'interface'    => __( 'Interface', 'easy-referral-for-woocommerce' )
+				//'interface'    => __( 'Interface', 'easy-referral-for-woocommerce' )
 			);
 			return apply_filters( 'woocommerce_get_sections_' . $this->id, $sections );
 		}

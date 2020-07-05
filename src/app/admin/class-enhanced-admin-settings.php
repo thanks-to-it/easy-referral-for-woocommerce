@@ -35,8 +35,20 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Enhanced_Admin_Settings' ) ) {
 			add_filter( 'woocommerce_get_settings_' . $this->settings_id, array( $this, 'handle_disable_param' ), 10 );
 			add_action( 'woocommerce_settings_save_' . $this->settings_id, function () {
 				add_filter( 'woocommerce_admin_settings_sanitize_option', array( $this, 'handle_allowed_values_param' ), 10, 3 );
+				add_filter( 'woocommerce_admin_settings_sanitize_option', array( $this, 'prevent_disabled_from_saving' ), 10, 3 );
 			} );
 			//add_filter( 'woocommerce_get_settings_' . $this->settings_id, array( $this, 'handle_allowed_values_param' ), 10 );
+		}
+
+		function prevent_disabled_from_saving( $value, $option, $raw_value ) {
+			if (
+				! isset( $option['disable'] )
+				|| true !== filter_var( $option['disable'], FILTER_VALIDATE_BOOLEAN )
+			) {
+				return $value;
+			}
+			$value = null;
+			return $value;
 		}
 
 		/**

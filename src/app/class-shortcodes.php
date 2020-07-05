@@ -83,7 +83,9 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Shortcodes' ) ) {
 					$content = do_shortcode( '[erwc_referral_codes_table]' );
 					break;
 				case 'referrer_details':
-					$content = do_shortcode( '[erwc_referrer_details]' );
+					if ( 'yes' === get_option( 'erwc_opt_referrer_details_section', 'yes' ) ) {
+						$content = do_shortcode( '[erwc_referrer_details]' );
+					}
 					break;
 			}
 			return $content;
@@ -99,10 +101,12 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Shortcodes' ) ) {
 		 */
 		function get_referral_sections() {
 			$sections = array(
-				'referrals'        => __( 'Referrals', 'easy-referral-for-woocommerce' ),
-				'referral_codes'   => __( 'Referral Codes', 'easy-referral-for-woocommerce' ),
-				'referrer_details' => __( 'Referrer Details', 'easy-referral-for-woocommerce' ),
+				'referrals'      => __( 'Referrals', 'easy-referral-for-woocommerce' ),
+				'referral_codes' => __( 'Referral Codes', 'easy-referral-for-woocommerce' ),
 			);
+			if ( 'yes' === get_option( 'erwc_opt_referrer_details_section', 'yes' ) ) {
+				$sections['referrer_details'] = __( 'Referrer Details', 'easy-referral-for-woocommerce' );
+			}
 			return $sections;
 		}
 

@@ -105,7 +105,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 					'default'  => array('wc-completed')
 				),
 				array(
-					'name'     => __( 'URL Param', 'easy-referral-for-woocommerce' ),
+					'name'     => __( 'Referral URL Param', 'easy-referral-for-woocommerce' ),
 					'type'     => 'text',
 					'id'       => 'erwc_opt_referral_url_param',
 					'disable'  => apply_filters( 'erwc_is_free_version', true ),
@@ -118,9 +118,44 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 					'id'   => 'erwc_section_general'
 				),
 				array(
+					'name' => __( 'Referral Info on Frontend', 'easy-referral-for-woocommerce' ),
+					'type' => 'title',
+					'desc' => sprintf( __( 'Referral info displayed on frontend mostly inside the <a href="%s">Referral Tab</a> on <a href="%s">My Account</a>.', 'easy-referral-for-woocommerce' ), ERWC()->factory->get_referral_tab()->get_endpoint_url(), get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ),
+					'id'   => 'erwc_section_referral_info_frontend',
+				),
+				array(
+					'type'     => 'checkbox',
+					'id'       => 'erwc_opt_interface_referral_codes_dashboard',
+					'name'     => __( 'Codes on the Dashboard', 'easy-referral-for-woocommerce' ),
+					'desc'     => __( 'Enable', 'easy-referral-for-woocommerce' ),
+					'desc_tip' => sprintf( __( 'Also displays Referral Codes on <a href="%s">My Account > Dashboard</a>. ', 'easy-referral-for-woocommerce' ), get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ),
+					'default'  => 'yes',
+				),
+				array(
+					'type'     => 'checkbox',
+					'id'       => 'erwc_opt_referrer_details_section',
+					'name'     => __( 'Referrer Details Section', 'easy-referral-for-woocommerce' ),
+					'desc'     => __( 'Enable', 'easy-referral-for-woocommerce' ),
+					'desc_tip' => sprintf( __( 'Displays a <a href="%s">section</a> inside the Referrals tab with fields related to payment.', 'easy-referral-for-woocommerce' ), ERWC()->factory->get_referral_tab()->get_endpoint_url() . '?section=referrer_details' ).'<br />'.__( 'The fields will be also visible on the user profile page.', 'easy-referral-for-woocommerce' ),
+					'default'  => 'yes',
+				),
+				array(
+					'type'     => 'checkbox',
+					'id'       => 'erwc_opt_interface_period_filter',
+					'disable'  => apply_filters( 'erwc_is_free_version', true ),
+					'name'     => __( 'Period Filter', 'easy-referral-for-woocommerce' ),
+					'desc'     => __( 'Enable', 'easy-referral-for-woocommerce' ),
+					'desc_tip' => __( 'Allows to filter Referrals by period (current month and previous month for now).', 'easy-referral-for-woocommerce' ),
+					'default'  => 'no',
+				),
+				array(
+					'type' => 'sectionend',
+					'id'   => 'erwc_section_referral_info_frontend'
+				),
+				array(
 					'name' => __( 'Apply Manually', 'easy-referral-for-woocommerce' ),
 					'type' => 'title',
-					'desc' => __( 'Instead of accessing a referral link, a Referee can also apply the Referral Code manually.', 'easy-referral-for-woocommerce' ),
+					'desc' => __( 'Instead of only accessing a referral link URL, a Referee will be able to also apply the Referral Code manually.', 'easy-referral-for-woocommerce' ),
 					'id'   => 'erwc_apply_manually',
 				),
 				array(
@@ -228,7 +263,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 					'type'     => 'text',
 					'disable'  => apply_filters( 'erwc_is_free_version', true ),
 					'id'       => 'erwc_opt_rewards_as_discount_orders_column',
-					'desc_tip' => __( 'Adds a column on the Orders List page displaying discounts.' ).'<br />'.__( 'Leave it empty to disable.' ),
+					'desc_tip' => __( 'Adds a column on the Orders List page displaying discounts from referral rewards.' ).'<br />'.__( 'Leave it empty to disable.' ),
 					'options'  => ERWC()->factory->get_referral_status_tax()->get_registered_terms( array( 'get_only' => 'id_and_title' ) ),
 					'placeholder' => __( 'Discount', 'easy-referral-for-woocommerce' ),
 					'default'  => '',
