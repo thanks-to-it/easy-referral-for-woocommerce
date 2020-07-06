@@ -153,7 +153,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 					'id'   => 'erwc_section_referral_info_frontend'
 				),
 				array(
-					'name' => __( 'Apply Manually', 'easy-referral-for-woocommerce' ),
+					'name' => __( 'Apply Code Manually', 'easy-referral-for-woocommerce' ),
 					'type' => 'title',
 					'desc' => __( 'Instead of only accessing a referral link URL, a Referee will be able to also apply the Referral Code manually.', 'easy-referral-for-woocommerce' ),
 					'id'   => 'erwc_apply_manually',
