@@ -198,7 +198,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 				array(
 					'name'        => __( 'Cart Template', 'easy-referral-for-woocommerce' ),
 					'type'        => 'textarea',
-					'desc'        => Functions::format_template_variables(array('nonce','input','title','description','btn_title')),
+					'desc'        => Functions::format_template_variables( array( 'nonce', 'input', 'title', 'btn_title' ) ),
 					'id'          => 'erwc_opt_apply_code_manually_cart_template',
 					'desc_tip'    => __( 'The template used to display the Referral Code field on the cart page.', 'easy-referral-for-woocommerce' ),
 					'disable'     => apply_filters( 'erwc_is_free_version', true ),
