@@ -120,6 +120,7 @@ return array(
     'ThanksToIT\\ERWC\\Core' => $baseDir . '/src/app/class-core.php',
     'ThanksToIT\\ERWC\\DI_Container' => $baseDir . '/src/app/class-di-container.php',
     'ThanksToIT\\ERWC\\Factory' => $baseDir . '/src/app/class-factory.php',
+    'ThanksToIT\\ERWC\\Functions' => $baseDir . '/src/app/class-functions.php',
     'ThanksToIT\\ERWC\\My_Account\\Dashboard_Tab' => $baseDir . '/src/app/my-account/class-dashboard-tab.php',
     'ThanksToIT\\ERWC\\My_Account\\Referral_Tab' => $baseDir . '/src/app/my-account/class-referral-tab.php',
     'ThanksToIT\\ERWC\\Referral\\Referral_Authenticity_Tax' => $baseDir . '/src/app/referral/class-referral-authenticity-tax.php',

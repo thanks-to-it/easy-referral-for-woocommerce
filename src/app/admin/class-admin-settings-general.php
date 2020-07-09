@@ -9,6 +9,9 @@
 
 namespace ThanksToIT\ERWC\Admin;
 
+use ThanksToIT\ERWC\Functions;
+use ThanksToIT\ERWC\Pro\Manual_Referral_Code;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
@@ -40,6 +43,11 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 				$random_string = substr( str_shuffle( str_repeat( $x = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil( $length / strlen( $x ) ) ) ), 1, $length );
 				update_option( 'erwc_opt_salt', $random_string );
 			}
+		}
+
+		function get_default_cart_field_container() {
+			$manual_referral_code = new Manual_Referral_Code();
+			return $manual_referral_code->get_default_cart_field_container();
 		}
 
 		/**
@@ -153,7 +161,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 					'id'   => 'erwc_section_referral_info_frontend'
 				),
 				array(
-					'name' => __( 'Apply Code Manually', 'easy-referral-for-woocommerce' ),
+					'name' => __( 'Apply Manually', 'easy-referral-for-woocommerce' ),
 					'type' => 'title',
 					'desc' => __( 'Instead of only accessing a referral link URL, a Referee will be able to also apply the Referral Code manually.', 'easy-referral-for-woocommerce' ),
 					'id'   => 'erwc_apply_manually',
@@ -182,6 +190,16 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 					'desc_tip'    => __( 'The priority used on the action hook to position the Referral Code field on the cart page.', 'easy-referral-for-woocommerce' ),
 					'disable'     => apply_filters( 'erwc_is_free_version', true ),
 					'default'     => 10,
+				),
+				array(
+					'name'        => __( 'Cart Template', 'easy-referral-for-woocommerce' ),
+					'type'        => 'textarea',
+					'desc'        => ERWC()->factory->get_adm, Functions::format_template_variables(array('nonce','input','title','description','btn_title')),
+					'id'          => 'erwc_opt_apply_code_manually_cart_template',
+					'desc_tip'    => __( 'The template used to display the Referral Code field on the cart page.', 'easy-referral-for-woocommerce' ),
+					'disable'     => apply_filters( 'erwc_is_free_version', true ),
+					'default'     => $this->get_default_cart_field_container(),
+					'css'         =>'width:100%;min-height:135px',
 				),
 				array(
 					'name'        => __( 'Checkout Position', 'easy-referral-for-woocommerce' ),
