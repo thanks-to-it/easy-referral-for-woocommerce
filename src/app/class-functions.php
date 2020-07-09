@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-if ( ! class_exists( 'ThanksToIT\ERWC\Factory' ) ) {
+if ( ! class_exists( 'ThanksToIT\ERWC\Functions' ) ) {
 
 	class Functions {
 		static function format_template_variables( $vars, $args = null ) {
