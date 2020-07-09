@@ -46,8 +46,12 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 		}
 
 		function get_default_cart_field_container() {
-			$manual_referral_code = new Manual_Referral_Code();
-			return $manual_referral_code->get_default_cart_field_container();
+			if ( apply_filters( 'erwc_is_free_version', true ) ) {
+				return '';
+			}else{
+				$manual_referral_code = new Manual_Referral_Code();
+				return $manual_referral_code->get_default_cart_field_container();
+			}			
 		}
 
 		/**
