@@ -13,6 +13,8 @@ src/vendor/tareq1988/wordpress-settings-api-class/example/*
 src/vendor/cmb2/cmb2/languages
 src/vendor/cmb2/cmb2/tests
 src/vendor/cmb2/cmb2/*.clover
+src/vendor/cmb2/cmb2/CHANGELOG.md
 !src/vendor/cmb2/cmb2/languages/*.pot
 
 **/*.log
+
