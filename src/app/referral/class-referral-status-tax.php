@@ -30,7 +30,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_Status_Tax' ) ) {
 		 */
 		function init() {
 			add_action( 'erwc_referral_cpt_created', array( $this, 'register_taxonomy' ) );
-			register_activation_hook( ERWC()->plugin_info['filesystem_path'], array( $this, 'create_terms_on_plugin_init' ) );
+			register_activation_hook( apply_filters( 'erwc_filesystem_path', ERWC()->plugin_info['filesystem_path'], 'activation' ), array( $this, 'create_terms_on_plugin_init' ) );
 		}
 
 		/**

@@ -106,7 +106,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Core' ) ) {
 		 */
 		function handle_admin() {
 			// Create salt option on plugin activation
-			register_activation_hook( ERWC()->plugin_info['filesystem_path'], array( ERWC()->factory->get_admin_settings_general(), 'update_salt_option_value' ) );
+			register_activation_hook( apply_filters( 'erwc_filesystem_path', ERWC()->plugin_info['filesystem_path'], 'activation' ), array( ERWC()->factory->get_admin_settings_general(), 'update_salt_option_value' ) );
 
 			// Settings Page
 			add_filter( 'woocommerce_get_settings_pages', array( $this, 'create_admin_settings' ), 15 );
