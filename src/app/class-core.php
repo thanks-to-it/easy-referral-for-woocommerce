@@ -61,6 +61,9 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Core' ) ) {
 				// Referral Code Manager
 				$this->factory->get_referral_code_manager()->init();
 
+				// Orders Referrals Column
+				$this->factory->get_orders_referrals_column()->init();
+
 				// Sharer
 				$this->factory->get_sharer()->init();
 

@@ -123,6 +123,7 @@ return array(
     'ThanksToIT\\ERWC\\Functions' => $baseDir . '/src/app/class-functions.php',
     'ThanksToIT\\ERWC\\My_Account\\Dashboard_Tab' => $baseDir . '/src/app/my-account/class-dashboard-tab.php',
     'ThanksToIT\\ERWC\\My_Account\\Referral_Tab' => $baseDir . '/src/app/my-account/class-referral-tab.php',
+    'ThanksToIT\\ERWC\\Orders_Referrals_Column' => $baseDir . '/src/app/class-orders-referrals-column.php',
     'ThanksToIT\\ERWC\\Referral\\Referral_Authenticity_Tax' => $baseDir . '/src/app/referral/class-referral-authenticity-tax.php',
     'ThanksToIT\\ERWC\\Referral\\Referral_CPT' => $baseDir . '/src/app/referral/class-referral-cpt.php',
     'ThanksToIT\\ERWC\\Referral\\Referral_Checking_Tax' => $baseDir . '/src/app/referral/class-referral-checking-tax.php',

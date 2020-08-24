@@ -2,7 +2,7 @@
 /**
  * Easy Referral for WooCommerce - Factory Class
  *
- * @version 1.0.0
+ * @version 1.0.6
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -291,6 +291,20 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Factory' ) ) {
 		 */
 		function get_scripts() {
 			return $this->get_instance( 'Scripts' );
+		}
+
+
+		/**
+		 * get_scripts.
+		 *
+		 * @version 1.0.6
+		 * @since   1.0.6
+		 *
+		 * @return Orders_Referrals_Column
+		 * @throws \ReflectionException
+		 */
+		function get_orders_referrals_column() {
+			return $this->get_instance( 'Orders_Referrals_Column' );
 		}
 
 		/**

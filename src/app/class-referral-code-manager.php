@@ -175,7 +175,7 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral_Code_Manager' ) ) {
 					<a href="<?php echo get_edit_user_link( $decoded['referrer_id'] ) ?>"><?php echo esc_html( $referrer->display_name ); ?></a>
 				</p>
 				<p>
-					<strong><?php echo __( 'Referrer Code', 'referral-system-for-woocommerce' ); ?>:</strong>
+					<strong><?php echo __( 'Referral Code', 'referral-system-for-woocommerce' ); ?>:</strong>
 					<?php echo esc_html( $referrer_code ); ?>
 				</p>
 				<p>

@@ -71,6 +71,7 @@ If you are interested in contributing - head over to the [Referral System for Wo
 * Add 'Apply Referral Code manually' option on pro version
 * Add Cart Position option from Apply Code Manually
 * Add Checkout Position option from Apply Code Manually
+* Add 'Show referrals on orders list' option
 
 = 1.0.5 - 14/11/2019 =
 * Add url icon on Referral Codes table

@@ -126,6 +126,14 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Admin\Admin_Settings_General' ) ) {
 					'default'  => ERWC()->factory->get_referral_code_manager()->get_referral_url_param(),
 				),
 				array(
+					'name'     => __( 'Show referrals on orders list', 'easy-referral-for-woocommerce' ),
+					'type'     => 'checkbox',
+					'id'       => 'erwc_opt_referrals_col_orders_list',
+					'desc_tip' => sprintf( __( 'Display a new column on the <a href="%s">orders list page</a> showing which orders contain referrals.', 'easy-referral-for-woocommerce' ), admin_url( 'edit.php?post_type=shop_order' ) ),
+					'desc'     => __( 'Enable', 'easy-referral-for-woocommerce' ),
+					'default'  => 'no'
+				),
+				array(
 					'type' => 'sectionend',
 					'id'   => 'erwc_section_general'
 				),

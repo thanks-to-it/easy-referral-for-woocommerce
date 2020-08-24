@@ -228,6 +228,9 @@ if ( ! class_exists( 'ThanksToIT\ERWC\Referral\Referral_CPT' ) ) {
 					'post_title' => __( 'Referral' ) . ' ' . $referral_id
 				) );
 
+				// Update order with referral id
+				update_post_meta( $order_id, '_erwc_referral_cpt_id', $referral_id );
+
 				// Set as default status (probably unpaid)
 				$referral_status = ERWC()->factory->get_referral_status_tax();
 				wp_set_object_terms( $referral_id, (int) get_option( 'erwc_opt_referral_status', ERWC()->factory->get_referral_status_tax()->get_probably_unpaid_status_id() ), $referral_status->tax_id );
